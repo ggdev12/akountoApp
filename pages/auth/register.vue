@@ -1,197 +1,113 @@
 <template>
-  <section
-    class="-min-h-screen relative pt-16 md:py-32 bg-white"
-    style="
-      background-image: url(&quot;https://shuffle.dev/flex-ui-assets/elements/pattern-white.svg&quot;);
-      background-position: center;
-    "
-  >
-    <div class="container px-4 mx-auto mb-16 md:mb-0">
-      <div class="w-full md:w-1/2 md:pr-4">
-        <div class="max-w-sm mx-auto">
-          <div class="mb-6 text-center">
-            <a class="inline-block mb-6" href="#">
-              <img
-                class="h-16"
-                src="https://shuffle.dev/flex-ui-assets/logos/flex-circle-green.svg"
-                alt=""
-              />
-            </a>
-            <h3 class="mb-4 text-2xl md:text-3xl font-bold">
-              Let's get started
-            </h3>
-            <p class="text-lg text-gray-500 font-medium">
-              Create your account with Kounto
-            </p>
+  <div class="flex min-h-screen w-full font-sans">
+    <!-- Left - Form -->
+    <div class="flex flex-col justify-center items-center w-full lg:w-1/2 px-6 bg-white">
+      <div class="w-full max-w-[360px]">
+        <div class="mb-8">
+          <div class="flex items-center gap-2 mb-8">
+            <img class="h-7 w-auto" src="https://dms.mydukaan.io/original/webp/media/79927748-92f3-4505-9bd0-9dc14b81b700.png" alt="Logo" />
+            <span class="font-semibold text-[15px] text-[#171717] tracking-tight">Kounto AI</span>
           </div>
-          <form @submit.prevent="register">
-            <div class="mb-6">
-              <label class="block mb-2 text-gray-800 font-medium">Name*</label>
-              <input
-                v-model="name"
-                class="appearance-none block w-full p-3 leading-5 text-gray-900 border border-gray-200 rounded-lg shadow-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-                type="text"
-                placeholder="Patryk"
-              />
-            </div>
-            <div class="mb-6">
-              <label class="block mb-2 text-gray-800 font-medium" for="email"
-                >Email*</label
-              >
-              <input
-                v-model="email"
-                class="appearance-none block w-full p-3 leading-5 text-gray-900 border border-gray-200 rounded-lg shadow-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-                type="email"
-                placeholder="dev@shuffle.dev"
-              />
-            </div>
-            <div class="mb-4">
-              <label class="block mb-2 text-gray-800 font-medium" for="password"
-                >Password*</label
-              >
-              <input
-                v-model="password"
-                class="appearance-none block w-full p-3 leading-5 text-gray-900 border border-gray-200 rounded-lg shadow-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-                type="password"
-                placeholder="************"
-              />
-            </div>
-            <button
-              :disabled="isRegistering"
-              type="submit"
-              class="inline-block py-3 px-7 mb-4 w-full text-base text-green-50 font-medium text-center leading-6 bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md shadow-sm"
-            >
-              <span v-if="isRegistering">Creating Account...</span>
-              <span v-else>Create Account</span>
-            </button>
-          </form>
-          <Snackbar v-model="showError" :message="error" />
-          <p class="text-center">
-            <span class="text-xs font-medium">Already have an account?</span>
-            <NuxtLink
-              to="/auth/login"
-              class="inline-block text-xs font-medium text-green-500 hover:text-green-600 hover:underline ml-2"
-              href="#"
-            >
-              Sign In</NuxtLink
-            >
-          </p>
+          <h1 class="text-[22px] font-semibold text-[#171717] tracking-tight">Create your account</h1>
+          <p class="mt-1 text-[14px] text-[#666]">Start processing documents in minutes.</p>
         </div>
+        <form @submit.prevent="register" class="space-y-4">
+          <div>
+            <label class="block text-[13px] font-medium text-[#444] mb-1.5">Name</label>
+            <input v-model="name" type="text" placeholder="Your full name"
+              class="w-full h-10 px-3 text-[14px] text-[#171717] bg-white border border-[#ddd] rounded-lg placeholder-[#999] focus:outline-none focus:ring-2 focus:ring-[#171717] focus:border-transparent transition-shadow" />
+          </div>
+          <div>
+            <label class="block text-[13px] font-medium text-[#444] mb-1.5">Email</label>
+            <input v-model="email" type="email" placeholder="you@company.com"
+              class="w-full h-10 px-3 text-[14px] text-[#171717] bg-white border border-[#ddd] rounded-lg placeholder-[#999] focus:outline-none focus:ring-2 focus:ring-[#171717] focus:border-transparent transition-shadow" />
+          </div>
+          <div>
+            <label class="block text-[13px] font-medium text-[#444] mb-1.5">Password</label>
+            <input v-model="password" type="password" placeholder="Min 8 characters"
+              class="w-full h-10 px-3 text-[14px] text-[#171717] bg-white border border-[#ddd] rounded-lg placeholder-[#999] focus:outline-none focus:ring-2 focus:ring-[#171717] focus:border-transparent transition-shadow" />
+          </div>
+          <button :disabled="isRegistering" type="submit"
+            class="w-full h-10 text-[14px] font-medium text-white bg-[#171717] rounded-lg hover:bg-[#333] focus:ring-2 focus:ring-offset-2 focus:ring-[#171717] disabled:opacity-50 transition-colors">
+            <span v-if="isRegistering">Creating account...</span>
+            <span v-else>Create Account</span>
+          </button>
+        </form>
+        <Snackbar v-model="showError" :message="error" />
+        <p class="mt-6 text-center text-[13px] text-[#666]">
+          Already have an account?
+          <NuxtLink to="/auth/login" class="font-medium text-[#171717] hover:underline">Sign in</NuxtLink>
+        </p>
       </div>
     </div>
-    <div class="md:absolute md:top-0 md:right-0 md:w-1/2 md:h-full md:pl-4">
-      <div
-        class="flex items-center justify-center h-full px-8 py-14 bg-gray-50"
-      >
-        <div class="md:max-w-xl mx-auto text-center">
-          <span
-            class="relative z-10 inline-block py-px px-2 mb-4 text-xs leading-5 text-green-500 bg-green-100 font-medium uppercase rounded-full shadow-sm"
-            >Quotes</span
-          >
-          <div class="relative mb-16">
-            <img
-              class="absolute -top-10 left-0 2xl:-left-12"
-              src="https://shuffle.dev/flex-ui-assets/elements/sign-up/quotes-top.svg"
-              alt=""
-            />
-            <img
-              class="absolute -bottom-16 right-0"
-              src="https://shuffle.dev/flex-ui-assets/elements/sign-up/quotes-bottom.svg"
-              alt=""
-            />
-            <h3
-              class="relative text-2xl md:text-3xl leading-tight font-medium text-gray-800"
-            >
-              Love the simplicity of the service and the prompt customer
-              support. We can’t imagine working without it.
-            </h3>
+    <!-- Right - Visual -->
+    <div class="hidden lg:flex lg:w-1/2 bg-[#0a0a0a] items-center justify-center p-12">
+      <div class="max-w-md text-center">
+        <div class="mb-8">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 rounded-full mb-6">
+            <div class="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
+            <span class="text-[12px] font-medium text-[#999]">Free to start, no card required</span>
           </div>
-          <div class="relative text-center">
-            <img
-              class="w-24 h-24 mb-6 mx-auto rounded-full"
-              src="https://shuffle.dev/flex-ui-assets/images/sign-up/avatar-men-sign-up.png"
-              alt=""
-            />
-            <h4 class="mb-2 text-lg text-gray-800 font-semibold">John Doe</h4>
-            <span class="block mb-8 text-lg text-gray-400"
-              >CEO & Founder at Flex.co</span
-            >
-            <div class="flex items-center justify-center">
-              <a class="w-3 h-3 mr-3 bg-gray-100 rounded-full" href="#"></a
-              ><a class="w-3 h-3 mr-3 bg-green-500 rounded-full" href="#"></a
-              ><a class="w-3 h-3 bg-gray-100 rounded-full" href="#"></a>
-            </div>
+          <h2 class="text-[28px] font-semibold text-white tracking-tight leading-tight">Stop doing data entry manually</h2>
+          <p class="mt-3 text-[15px] text-[#666] leading-relaxed">Let AI extract, categorize, and import your financial documents into your accounting software.</p>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-10">
+          <div class="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <p class="text-[24px] font-semibold text-white">2min</p>
+            <p class="text-[12px] text-[#666] mt-1">Setup time</p>
+          </div>
+          <div class="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <p class="text-[24px] font-semibold text-white">100</p>
+            <p class="text-[12px] text-[#666] mt-1">Free docs</p>
+          </div>
+          <div class="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
+            <p class="text-[24px] font-semibold text-white">24/7</p>
+            <p class="text-[12px] text-[#666] mt-1">Support</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
-<script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-import { useNuxtApp } from "#app";
-import { onMounted } from "vue";
-import Snackbar from "~/components/shared/snackbar.vue";
 
-const name = ref("");
-const email = ref("");
-const password = ref("");
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useNuxtApp } from '#app';
+import { onMounted } from 'vue';
+import Snackbar from '~/components/shared/snackbar.vue';
+
+const name = ref('');
+const email = ref('');
+const password = ref('');
 const router = useRouter();
 const { $api } = useNuxtApp();
-
 const isRegistering = ref(false);
 const showError = ref(false);
-const error = ref("");
+const error = ref('');
 
-watch(error, (newValue) => {
-  if (newValue) {
-    showError.value = true;
-    setTimeout(() => {
-      showError.value = false;
-    }, 3000);
-  }
-});
+const token = process.client ? localStorage.getItem('token') || '' : '';
 
-const token = process.client ? localStorage.getItem("token") || "" : "";
+onMounted(() => { if (token) navigateTo('/'); });
 
-onMounted(() => {
-  if (token) {
-    navigateTo("/");
-  }
-});
+watch(error, (v) => { if (v) { showError.value = true; setTimeout(() => { showError.value = false; }, 3000); } });
 
 const register = async () => {
   isRegistering.value = true;
-  error.value = "";
+  error.value = '';
   try {
-    let user = await $api.auth.register({
-      email: email.value,
-      password: password.value,
-      name: name.value,
-    });
-
+    let user = await $api.auth.register({ email: email.value, password: password.value, name: name.value });
     isRegistering.value = false;
-    console.log({ user: user });
-
     if (user.token) {
-      router.push("/welcome");
+      router.push('/welcome');
     } else {
-      error.value = "Unable to create account: " + user.message;
-      showError.value = true;
+      error.value = 'Unable to create account: ' + user.message;
     }
   } catch (err) {
-    // Changed from 'error' to 'err'
     isRegistering.value = false;
-    console.error("Registration failed:", err);
-
-    error.value =
-      err.response?.data?.message || "Registration failed. Please try again.";
-    showError.value = true;
+    error.value = err.response?.data?.message || 'Registration failed. Please try again.';
   }
 };
 
-definePageMeta({
-  layout: "blank",
-});
+definePageMeta({ layout: 'blank' });
 </script>

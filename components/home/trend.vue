@@ -1,15 +1,18 @@
 <template>
-  <div class="bg-white rounded-lg p-6">
-    <h3 class="text-lg font-semibold text-gray-700 mb-4">
-      Daily Document Uploads
-    </h3>
-    <div ref="chartRef" style="height: 300px"></div>
+  <div class="bg-white rounded-xl border border-[#eaeaea] p-6">
+    <div class="flex items-center justify-between mb-5">
+      <div>
+        <h2 class="text-[14px] font-semibold text-[#171717]">Document Uploads</h2>
+        <p class="text-[12px] text-[#999] mt-0.5">Last 30 days</p>
+      </div>
+    </div>
+    <div ref="chartRef" style="height: 260px"></div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import { useNuxtApp } from "#app";
+import { ref, onMounted } from 'vue';
+import { useNuxtApp } from '#app';
 
 const chartRef = ref(null);
 const uploadData = ref([]);
@@ -21,50 +24,57 @@ onMounted(async () => {
     uploadData.value = data.data.dateWiseDocs;
 
     const options = {
-      series: [
-        {
-          name: "Documents Uploaded",
-          data: uploadData.value.map((item) => item.count),
-        },
-      ],
+      series: [{
+        name: 'Uploads',
+        data: uploadData.value.map((item) => item.count),
+      }],
       chart: {
-        height: 200,
-        type: "area",
-        toolbar: {
-          show: false,
-        },
+        height: 240,
+        type: 'area',
+        toolbar: { show: false },
+        fontFamily: 'Inter, system-ui, sans-serif',
+        zoom: { enabled: false },
       },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: "smooth",
-      },
+      dataLabels: { enabled: false },
+      stroke: { curve: 'straight', width: 1.5 },
       xaxis: {
-        type: "datetime",
+        type: 'datetime',
         categories: uploadData.value.map((item) => item.date),
+        labels: { style: { colors: '#999', fontSize: '11px', fontFamily: 'Inter' } },
+        axisBorder: { show: false },
+        axisTicks: { show: false },
+      },
+      yaxis: {
+        labels: { style: { colors: '#999', fontSize: '11px', fontFamily: 'Inter' } },
+      },
+      grid: {
+        borderColor: '#f5f5f5',
+        strokeDashArray: 0,
+        xaxis: { lines: { show: false } },
+        yaxis: { lines: { show: true } },
+        padding: { left: 8, right: 8, top: 0, bottom: 0 },
       },
       tooltip: {
-        x: {
-          format: "dd MMM yyyy",
-        },
+        x: { format: 'dd MMM yyyy' },
+        theme: 'dark',
+        style: { fontSize: '12px', fontFamily: 'Inter' },
       },
       fill: {
-        type: "gradient",
+        type: 'gradient',
         gradient: {
           shadeIntensity: 1,
-          opacityFrom: 0.7,
-          opacityTo: 0.9,
+          opacityFrom: 0.15,
+          opacityTo: 0.02,
           stops: [0, 100],
         },
       },
-      colors: ["#3B82F6"], // Blue color to match your theme
+      colors: ['#171717'],
     };
 
     const chart = new ApexCharts(chartRef.value, options);
     chart.render();
   } catch (error) {
-    console.error("Error fetching dashboard data:", error);
+    console.error('Error fetching dashboard data:', error);
   }
 });
 </script>
