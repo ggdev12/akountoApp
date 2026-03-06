@@ -3,7 +3,7 @@
 
   <section class="py-4 overflow-hidden">
     <div class="container px-4 mx-auto">
-      <div class="p-6 bg-white border rounded-lg">
+      <div class="p-6 bg-[#0a0a0a] border rounded-lg">
         <div class="flex flex-wrap -m-2.5">
           <div class="w-full sm:w-1/3 p-2.5">
             <div class="flex flex-col justify-between pl-10 pt-4">
@@ -84,7 +84,7 @@
                   </li>
                 </ul>
                 <a
-                  class="hidden inline-flex flex-wrap items-center justify-center px-3 py-2 text-center text-neutral-50 font-medium bg-indigo-700 hover:bg-indigo-500 rounded-lg transition duration-300"
+                  class="hidden inline-flex flex-wrap items-center justify-center px-3 py-2 text-center text-neutral-50 font-medium bg-indigo-700 hover:bg-emerald-400 rounded-lg transition duration-300"
                   href="#"
                 >
                   <span class="mr-3 font-medium">Get Started</span>
@@ -108,7 +108,7 @@
             </div>
           </div>
           <div class="w-full sm:w-1/6 p-2.5"></div>
-          <div class="w-full sm:w-1/2 p-2.5 border-l border-gray-200">
+          <div class="w-full sm:w-1/2 p-2.5 border-l border-white/[0.06]">
             <Upload class=" " />
           </div>
         </div>

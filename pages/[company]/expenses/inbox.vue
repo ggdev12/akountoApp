@@ -2,7 +2,7 @@
   <div class="flex-1 p-0">
     <header class="mb-8 hidden">
       <h2 class="text-2xl font-bold">Expenses Inbox</h2>
-      <p class="text-gray-600">
+      <p class="text-[#a1a1a1]">
         Review and manage your scanned expense receipts.
       </p>
     </header>
@@ -10,7 +10,7 @@
     <main>
       <!-- Expense Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-lg">
+        <div class="bg-[#0a0a0a] rounded-lg">
           <img
             src="https://placehold.co/600x400"
             alt="Expense Receipt"
@@ -18,7 +18,7 @@
           />
           <div class="p-4">
             <h3 class="text-lg font-semibold mb-1">Expense Receipt #1</h3>
-            <p class="text-gray-600 text-sm mb-2">
+            <p class="text-[#a1a1a1] text-sm mb-2">
               <span class="font-semibold">Date:</span> 2023-03-30<br />
               <span class="font-semibold">Amount:</span> $250.00<br />
               <span class="font-semibold">Category:</span> Office Supplies
@@ -28,7 +28,7 @@
                 class="bg-green-100 text-green-800 py-1 px-2 rounded-full text-xs"
                 >To Review</span
               >
-              <a href="#" class="text-blue-500 hover:text-blue-600 text-sm"
+              <a href="#" class="text-emerald-400 hover:text-emerald-400 text-sm"
                 >View Details</a
               >
             </div>

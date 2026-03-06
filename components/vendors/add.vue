@@ -19,26 +19,26 @@
             >
               <DialogPanel class="pointer-events-auto w-screen max-w-2xl">
                 <form
-                  class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl"
+                  class="flex h-full flex-col overflow-y-scroll bg-[#0a0a0a] shadow-xl border-l border-white/[0.06]"
                   @submit.prevent="addVendor"
                 >
                   <div class="flex-1">
                     <!-- Header -->
-                    <div class="bg-gray-50 px-4 py-6 sm:px-6">
+                    <div class="bg-[#111111] border-b border-white/[0.06] px-4 py-6 sm:px-6">
                       <div class="flex items-start justify-between space-x-3">
                         <div class="space-y-1">
                           <DialogTitle
-                            class="text-lg leading-6 font-medium text-gray-900"
+                            class="text-lg leading-6 font-medium text-white"
                             >Add Vendor</DialogTitle
                           >
-                          <p class="text-sm text-gray-500">
+                          <p class="text-sm text-[#71717a]">
                             Fill in the information below to add a new vendor.
                           </p>
                         </div>
                         <div class="flex h-7 items-center">
                           <button
                             type="button"
-                            class="text-gray-400 hover:text-gray-500"
+                            class="text-[#525252] hover:text-[#71717a]"
                             @click="closeDialog"
                           >
                             <XMarkIcon class="h-6 w-6" aria-hidden="true" />
@@ -49,7 +49,7 @@
 
                     <!-- Form Fields -->
                     <div
-                      class="space-y-6 py-6 sm:space-y-0 sm:divide-y sm:divide-gray-200 sm:py-0"
+                      class="space-y-6 py-6 sm:space-y-0 sm:divide-y sm:divide-white/[0.06] sm:py-0"
                     >
                       <!-- Name -->
                       <div
@@ -58,7 +58,7 @@
                         <div>
                           <label
                             for="name"
-                            class="block text-sm font-medium leading-6 text-gray-900 sm:mt-1.5"
+                            class="block text-sm font-medium leading-6 text-white sm:mt-1.5"
                             >Name</label
                           >
                         </div>
@@ -68,7 +68,7 @@
                             v-model="newVendor.Name"
                             id="name"
                             required
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500"
+                            class="block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:ring-emerald-500"
                           />
                         </div>
                       </div>
@@ -80,7 +80,7 @@
                         <div>
                           <label
                             for="primaryEmail"
-                            class="block text-sm font-medium leading-6 text-gray-900 sm:mt-1.5"
+                            class="block text-sm font-medium leading-6 text-white sm:mt-1.5"
                             >Primary Email</label
                           >
                         </div>
@@ -89,7 +89,7 @@
                             type="email"
                             v-model="newVendor.Email"
                             id="primaryEmail"
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500"
+                            class="block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:ring-emerald-500"
                           />
                         </div>
                       </div>
@@ -101,7 +101,7 @@
                         <div>
                           <label
                             for="phone"
-                            class="block text-sm font-medium leading-6 text-gray-900 sm:mt-1.5"
+                            class="block text-sm font-medium leading-6 text-white sm:mt-1.5"
                             >Phone</label
                           >
                         </div>
@@ -110,7 +110,7 @@
                             type="text"
                             v-model="newVendor.Phone"
                             id="phone"
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500"
+                            class="block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:ring-emerald-500"
                           />
                         </div>
                       </div>
@@ -122,7 +122,7 @@
                         <div>
                           <label
                             for="address"
-                            class="block text-sm font-medium leading-6 text-gray-900 sm:mt-1.5"
+                            class="block text-sm font-medium leading-6 text-white sm:mt-1.5"
                             >Address</label
                           >
                         </div>
@@ -132,28 +132,28 @@
                             v-model="newVendor.Address.Line1"
                             placeholder="Line 1"
                             id="line1"
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500"
+                            class="block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:ring-emerald-500"
                           />
                           <input
                             type="text"
                             v-model="newVendor.Address.City"
                             placeholder="City"
                             id="city"
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500"
+                            class="block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:ring-emerald-500"
                           />
                           <input
                             type="text"
                             v-model="newVendor.Address.State"
                             placeholder="State"
                             id="state"
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500"
+                            class="block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:ring-emerald-500"
                           />
                           <input
                             type="text"
                             v-model="newVendor.Address.ZipCode"
                             placeholder="Zip Code"
                             id="billingAddress"
-                            class="block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500"
+                            class="block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:ring-emerald-500"
                           />
                         </div>
                       </div>
@@ -162,19 +162,19 @@
 
                   <!-- Action buttons -->
                   <div
-                    class="flex-shrink-0 border-t border-gray-200 px-4 py-5 sm:px-6"
+                    class="flex-shrink-0 border-t border-white/[0.06] px-4 py-5 sm:px-6"
                   >
                     <div class="flex justify-end space-x-3">
                       <button
                         type="button"
-                        class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50"
+                        class="rounded-lg bg-[#0a0a0a]/[0.04] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#111111]"
                         @click="closeDialog"
                       >
                         Cancel
                       </button>
                       <button
                         type="submit"
-                        class="inline-flex justify-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                        class="inline-flex justify-center rounded-md bg-emerald-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus:outline-none focus:shadow-outline"
                       >
                         Add
                       </button>

@@ -1,8 +1,8 @@
 <template>
   <div>
     <dl class="mt-0 grid grid-cols-1 gap-5 sm:grid-cols-4">
-      <div v-for="item in stats" :key="item.name" class="overflow-hidden rounded-lg bg-white px-4 py-5 sm:p-6">
-        <dt class="truncate text-sm font-medium text-gray-500">{{ item.name }}</dt>
+      <div v-for="item in stats" :key="item.name" class="overflow-hidden rounded-lg bg-[#0a0a0a] px-4 py-5 sm:p-6">
+        <dt class="truncate text-sm font-medium text-[#71717a]">{{ item.name }}</dt>
         <dd class="mt-1 text-3xl font-semibold tracking-tight" :class="item.color">{{ item.stat }}</dd>
       </div>
     </dl>
@@ -24,7 +24,7 @@ onMounted(async () => {
       {
         name: 'Documents Scanned',
         stat: data.data.companyStats.totalDocuments || 0,
-        color: 'text-blue-500'
+        color: 'text-emerald-400'
       },
       {
         name: 'Processed',
@@ -39,7 +39,7 @@ onMounted(async () => {
       {
         name: 'Success Rate',
         stat: `${isNaN(data.data.companyStats.successRate) ? 0 : data.data.companyStats.successRate}%`,
-        color: 'text-blue-500'
+        color: 'text-emerald-400'
       }
     ];
   } catch (error) {

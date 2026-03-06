@@ -1,20 +1,20 @@
 <template>
   <div>
     <!-- Normal view -->
-    <div v-if="!isFullScreen" class="bg-white rounded-lg p-4 hidden">
-      <h3 class="text-sm font-semibold text-gray-700 mb-3">AI Assistant</h3>
+    <div v-if="!isFullScreen" class="bg-[#0a0a0a] rounded-lg p-4 hidden">
+      <h3 class="text-sm font-semibold text-[#a1a1a1] mb-3">AI Assistant</h3>
       <div class="relative">
         <div
           class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
         >
-          <MagnifyingGlassIcon class="h-4 w-4 text-gray-400" />
+          <MagnifyingGlassIcon class="h-4 w-4 text-[#525252]" />
         </div>
         <input
           v-model="query"
           @click="toggleFullScreen"
           type="text"
           placeholder="Ask anything...like revenue trend, expense breakdown, cash flow"
-          class="w-full pl-9 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          class="w-full pl-9 pr-4 py-2 text-sm border border-white/[0.08] rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
         />
       </div>
     </div>
@@ -23,10 +23,10 @@
     <div v-else class="fixed inset-0 flex bg-neutral-100 z-50 overflow-hidden">
       <!-- Chat previews sidebar -->
       <div
-        class="bg-gray-900 w-[18%] border-r border-gray-700 flex flex-col overflow-hidden"
+        class="bg-[#09090b] w-[18%] border-r border-white/[0.08] flex flex-col overflow-hidden"
       >
-        <div class="p-3 border-b border-gray-800">
-          <h2 class="text-3xl font-semibold text-indigo-500">akounto ai</h2>
+        <div class="p-3 border-b border-white/[0.06]">
+          <h2 class="text-3xl font-semibold text-emerald-400">akounto ai</h2>
         </div>
         <div
           class="flex-grow chat-previews-container p-2 overflow-y-auto"
@@ -37,18 +37,18 @@
             v-for="preview in chatPreviews"
             :key="preview.id"
             @click="loadChatData(preview.id)"
-            class="p-2.5 hover:bg-gray-800 cursor-pointer rounded-xl"
+            class="p-2.5 hover:bg-[#111111] cursor-pointer rounded-xl"
           >
-            <p class="text-sm text-gray-200 truncate">{{ preview.prompt }}</p>
+            <p class="text-sm text-[#d4d4d8] truncate">{{ preview.prompt }}</p>
           </div>
-          <div v-if="isLoadingMore" class="text-center py-2 text-gray-400">
+          <div v-if="isLoadingMore" class="text-center py-2 text-[#525252]">
             Loading more...
           </div>
         </div>
-        <div class="p-4 border-t border-gray-800">
+        <div class="p-4 border-t border-white/[0.06]">
           <button
             @click="startNewChat"
-            class="w-full py-2 bg-indigo-600 text-indigo-50 font-bold rounded-lg focus:outline-none"
+            class="w-full py-2 bg-emerald-500 text-indigo-50 font-bold rounded-lg focus:outline-none"
           >
             New Chat
           </button>
@@ -58,12 +58,12 @@
       <!-- Main chat area -->
       <div class="flex-1 flex flex-col bg-neutral-100 overflow-hidden">
         <div
-          class="p-4 border-b border-gray-200 flex justify-between items-center"
+          class="p-4 border-b border-white/[0.06] flex justify-between items-center"
         >
-          <h2 class="text-xl font-bold text-gray-800">Chat</h2>
+          <h2 class="text-xl font-bold text-white">Chat</h2>
           <button
             @click="closeFullScreen"
-            class="text-gray-600 hover:text-gray-800"
+            class="text-[#a1a1a1] hover:text-white"
           >
             <XMarkIcon class="h-6 w-6" />
           </button>
@@ -79,15 +79,15 @@
               <p>{{ currentChatData.result }}</p>
             </div>
           </div>
-          <div v-else-if="response" class="bg-white rounded-lg p-6 shadow">
-            <p class="text-gray-700 mb-4">{{ response }}</p>
+          <div v-else-if="response" class="bg-[#0a0a0a] rounded-lg p-6 shadow">
+            <p class="text-[#a1a1a1] mb-4">{{ response }}</p>
           </div>
         </div>
         <div
           v-if="!currentChatData && !response"
-          class="p-4 border-t border-gray-200"
+          class="p-4 border-t border-white/[0.06]"
         >
-          <div v-if="isLoading" class="text-center text-gray-700">
+          <div v-if="isLoading" class="text-center text-[#a1a1a1]">
             Loading...
           </div>
           <div v-else class="relative">
@@ -96,12 +96,12 @@
               @keyup.enter="performSearch"
               type="text"
               placeholder="Ask anything about your finances..."
-              class="w-full pl-10 pr-20 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              class="w-full pl-10 pr-20 py-2 border border-white/[0.08] rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
             />
             <div
               class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
             >
-              <MagnifyingGlassIcon class="h-5 w-5 text-gray-400" />
+              <MagnifyingGlassIcon class="h-5 w-5 text-[#525252]" />
             </div>
             <button
               @click="performSearch"

@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-white rounded-lg p-4">
-    <h3 class="text-lg font-semibold text-gray-700 mb-4">Quick Actions</h3>
+  <div class="bg-[#0a0a0a] rounded-lg p-4">
+    <h3 class="text-lg font-semibold text-[#a1a1a1] mb-4">Quick Actions</h3>
 
     <div class="grid grid-cols-2 gap-4">
       <button
@@ -35,7 +35,7 @@ import {
 const actions = ref([
   {
     label: "Upload Invoice",
-    bgColor: "bg-blue-100 hover:bg-blue-200",
+    bgColor: "bg-emerald-500/10 hover:bg-emerald-500/20",
     textColor: "text-blue-800",
     icon: DocumentArrowUpIcon,
     handler: () => {

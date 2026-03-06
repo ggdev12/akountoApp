@@ -1,47 +1,50 @@
 <template>
-  <div class="">
-    <div class="border-b border-gray-200 -mx-8 flex flex-wrap items-center justify-between sm:flex-nowrap">
-      <div class="mb-2 -mt-6">
-        <div class="flex items-center">
-          <div class="ml-4">
-            <h3 class="text-base font-semibold leading-6 text-gray-900">
-              Activate Your 14-Day Free Trial
-            </h3>
-            <p class="text-sm text-gray-500">
-              Enter your credit card details to start your free trial.
-            </p>
+  <div>
+    <div class="border-b border-white/[0.06] -mx-8 pb-4">
+      <div class="flex flex-wrap items-center justify-between sm:flex-nowrap">
+        <div class="mb-2 -mt-6">
+          <div class="flex items-center">
+            <div class="ml-4">
+              <h3 class="text-base font-semibold leading-6 text-white">Activate Your 14-Day Free Trial</h3>
+              <p class="text-sm text-[#71717a]">Enter your credit card details to start your free trial.</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="ml-4 mt-4 flex flex-shrink-0"></div>
     </div>
 
     <div class="py-6">
-      <p class="text-gray-700 mb-4">Enter your credit card details to start your 14-day free trial. You won't be charged until the trial ends.</p>
+      <p class="text-[#a1a1a1] mb-4 text-sm">Enter your credit card details to start your 14-day free trial. You won't be charged until the trial ends.</p>
       <form @submit.prevent="activateTrial" class="space-y-4">
         <div>
-          <label for="cardElement" class="block text-sm font-medium text-gray-700">Credit or debit card</label>
-          <div id="cardElement" class="mt-1 p-3 border rounded-md shadow-sm"></div>
-          <div id="cardErrors" role="alert" class="text-red-600 text-sm mt-2"></div>
+          <label for="cardElement" class="block text-sm font-medium text-[#a1a1a1]">Credit or debit card</label>
+          <div id="cardElement" class="mt-1 p-3 bg-[#0a0a0a]/[0.04] border border-white/[0.08] rounded-lg"></div>
+          <div id="cardErrors" role="alert" class="text-red-400 text-sm mt-2"></div>
         </div>
         <div>
-          <label for="name" class="block text-sm font-medium text-gray-700">Name on Card</label>
+          <label for="name" class="block text-sm font-medium text-[#a1a1a1]">Name on Card</label>
           <input type="text" id="name" v-model="name" required
-                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                 placeholder="John Doe">
+            class="mt-1 w-full px-4 py-3 bg-[#0a0a0a]/[0.04] border border-white/[0.08] rounded-lg text-white placeholder-[#525252] focus:outline-none focus:ring-2 focus:ring-emerald-500/40 text-sm"
+            placeholder="John Doe">
         </div>
         <div class="flex items-center">
           <input type="checkbox" id="terms" v-model="agreeToTerms" required
-                 class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-          <label for="terms" class="ml-2 block text-sm text-gray-900">
-            I agree to the <a href="#" class="text-blue-600 hover:underline">Terms and Conditions</a>
+            class="h-4 w-4 text-emerald-500 focus:ring-emerald-500 border-white/[0.12] bg-[#0a0a0a]/[0.04] rounded">
+          <label for="terms" class="ml-2 block text-sm text-[#a1a1a1]">
+            I agree to the <a href="#" class="text-emerald-400 hover:underline">Terms and Conditions</a>
           </label>
         </div>
         <div>
-          <button type="submit" 
-                  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                  :disabled="!agreeToTerms || isProcessing">
+          <button type="submit"
+            class="w-full flex justify-center py-3 px-4 rounded-lg text-sm font-medium text-white bg-emerald-500 hover:bg-emerald-400 focus:outline-none transition-all glow-green"
+            :disabled="!agreeToTerms || isProcessing">
             {{ isProcessing ? 'Processing...' : 'Start My Free Trial' }}
+          </button>
+        </div>
+        <div class="mt-3">
+          <button type="button" @click="('skip')"
+            class="w-full flex justify-center py-3 px-4 rounded-lg text-sm font-medium text-[#a1a1a1] hover:text-white border border-white/[0.08] hover:border-white/[0.16] transition-all">
+            Skip this step
           </button>
         </div>
       </form>
@@ -52,64 +55,43 @@
 <script>
 export default {
   data() {
-    return {
-      stripe: null,
-      card: null,
-      name: '',
-      agreeToTerms: false,
-      isProcessing: false
-    };
+    return { stripe: null, card: null, name: '', agreeToTerms: false, isProcessing: false };
   },
-  mounted() {
-    this.initializeStripe();
-  },
+  mounted() { this.initializeStripe(); },
   methods: {
     initializeStripe() {
-      this.stripe = Stripe('pk_test_51PXqaQIpsv0mU6RHn2vmubfPtvHUBVTsPbxonqxQHh6rAbA6t3KbraP9xWucXENQFuZvQsM6C0OzFFVSJXrmoDtF00X3kUu83V'); // Replace with your actual Stripe publishable key
+      this.stripe = Stripe('pk_test_51PXqaQIpsv0mU6RHn2vmubfPtvHUBVTsPbxonqxQHh6rAbA6t3KbraP9xWucXENQFuZvQsM6C0OzFFVSJXrmoDtF00X3kUu83V');
       const elements = this.stripe.elements();
-      this.card = elements.create('card');
+      this.card = elements.create('card', {
+        style: {
+          base: { color: '#ffffff', fontFamily: 'Inter, sans-serif', fontSize: '14px', '::placeholder': { color: '#525252' } },
+          invalid: { color: '#f87171' },
+        },
+      });
       this.card.mount('#cardElement');
-
       this.card.addEventListener('change', (event) => {
         const displayError = document.getElementById('cardErrors');
-        if (event.error) {
-          displayError.textContent = event.error.message;
-        } else {
-          displayError.textContent = '';
-        }
+        displayError.textContent = event.error ? event.error.message : '';
       });
     },
     async activateTrial() {
       if (!this.agreeToTerms) return;
-      
       this.isProcessing = true;
-      const { token, error } = await this.stripe.createToken(this.card, {
-        name: this.name
-      });
-
+      const { token, error } = await this.stripe.createToken(this.card, { name: this.name });
       if (error) {
-        const errorElement = document.getElementById('cardErrors');
-        errorElement.textContent = error.message;
+        document.getElementById('cardErrors').textContent = error.message;
         this.isProcessing = false;
       } else {
-        // Send the token to your server
         this.sendTokenToServer(token);
       }
     },
     async sendTokenToServer(token) {
-      // Here you would send the token to your server to activate the trial
-      console.log('Sending token to server:', token.id);
       this.isProcessing = true;
       try {
         const { $api } = useNuxtApp();
         const response = await $api.subscription.startTrial(token.id);
-        console.log("response", response);
         if (response.data.success) {
-          this.$emit('trial-activated', {
-            success: true,
-            message: 'Trial activated successfully!',
-            token: token.id
-          });
+          this.$emit('trial-activated', { success: true, message: 'Trial activated successfully!', token: token.id });
         } else {
           throw new Error(response.data.message || 'Failed to activate trial');
         }
@@ -119,7 +101,7 @@ export default {
       } finally {
         this.isProcessing = false;
       }
-    }
-  }
+    },
+  },
 };
 </script>

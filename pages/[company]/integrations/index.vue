@@ -2,30 +2,30 @@
   <div>
     <header class="mb-8">
       <h2 class="text-2xl font-bold">Integrations</h2>
-      <p class="text-gray-600">
+      <p class="text-[#a1a1a1]">
         Connect your Finny account with your favorite accounting systems.
       </p>
     </header>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Integration Cards -->
-      <div class="bg-white rounded-lg p-6">
+      <div class="bg-[#0a0a0a] rounded-lg p-6">
         <img
           src="https://logo.clearbit.com/quickbooks.com"
           alt="QuickBooks Logo"
           class="h-12 mb-4"
         />
         <h3 class="text-xl font-semibold mb-2">QuickBooks</h3>
-        <p class="text-gray-600 mb-4">
+        <p class="text-[#a1a1a1] mb-4">
           Connect with QuickBooks for seamless accounting integration.
         </p>
         <button
           @click="handleQuickbooksToggle"
           :disabled="isLoading"
           :class="{
-            'border border-blue-500 text-blue-500 bg-white py-2 px-4 rounded-md hover:opacity-50':
+            'border border-emerald-500 text-emerald-400 bg-[#0a0a0a] py-2 px-4 rounded-md hover:opacity-50':
               integratedTo.quickbooks,
-            'bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600':
+            'bg-emerald-500 text-white py-2 px-4 rounded-md hover:bg-emerald-500':
               !integratedTo.quickbooks,
           }"
         >
@@ -35,7 +35,7 @@
           }}</span>
         </button>
         <button
-          class="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 ml-4 float-right"
+          class="bg-[#111111]0 text-white py-2 px-4 rounded-md hover:bg-black/60 ml-4 float-right"
         >
           Settings
         </button>
@@ -48,10 +48,10 @@
       class="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50"
     >
       <div
-        class="bg-white p-4 rounded-lg shadow-lg flex items-center space-x-2"
+        class="bg-[#0a0a0a] p-4 rounded-lg shadow-lg flex items-center space-x-2"
       >
         <div class="loader"></div>
-        <p class="text-gray-700">{{ loadingMessage }}</p>
+        <p class="text-[#a1a1a1]">{{ loadingMessage }}</p>
       </div>
     </div>
   </div>

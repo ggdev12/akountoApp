@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-white rounded-lg p-6">
-    <h3 class="text-lg font-semibold text-gray-700 mb-4">green</h3>
+  <div class="bg-[#0a0a0a] rounded-lg p-6">
+    <h3 class="text-lg font-semibold text-[#a1a1a1] mb-4">green</h3>
     <div class="space-y-4">
       <div
         v-for="(step, index) in steps"
@@ -8,7 +8,7 @@
         class="flex items-center"
       >
         <div
-          :class="`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-3 ${step.completed ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-500'}`"
+          :class="`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-3 ${step.completed ? 'bg-green-500 text-white' : 'bg-white/[0.06] text-[#71717a]'}`"
         >
           <component
             :is="step.completed ? CheckIcon : step.icon"
@@ -17,18 +17,18 @@
         </div>
         <div class="flex-grow">
           <p
-            :class="`font-medium ${step.completed ? 'text-green-500' : 'text-gray-700'}`"
+            :class="`font-medium ${step.completed ? 'text-green-500' : 'text-[#a1a1a1]'}`"
           >
             {{ step.label }}
           </p>
-          <p v-if="!step.completed" class="text-sm text-gray-500">
+          <p v-if="!step.completed" class="text-sm text-[#71717a]">
             {{ step.description }}
           </p>
         </div>
         <div v-if="!step.completed" class="flex-shrink-0 ml-3">
           <button
             @click="step.action"
-            class="text-blue-500 hover:text-blue-700 text-sm font-medium"
+            class="text-emerald-400 hover:text-emerald-400 text-sm font-medium"
           >
             {{ step.actionText }}
           </button>

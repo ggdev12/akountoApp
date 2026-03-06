@@ -1,36 +1,29 @@
 <template>
-  <div
-    class="bg-white p-5 sticky top-0 z-40 flex items-center justify-between border-b border-gray-200 -mx-8 -mt-10 mb-10"
-  >
-    <div class="flex-1">
-      <h2
-        class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:tracking-tight"
-      >
-        Manage Receipts
-      </h2>
-      <p class="mt-2 text-sm text-gray-500">
-        Manage and process your sales invoices efficiently.
-      </p>
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+    <div>
+      <h1 class="text-[20px] sm:text-[22px] font-semibold text-white tracking-tight">Manage Receipts</h1>
+      <p class="mt-0.5 sm:mt-1 text-[12px] sm:text-[13px] text-[#71717a]">Manage and process your expense receipts.</p>
     </div>
     <div class="flex">
       <button
         @click="triggerFileUpload"
         type="button"
-        class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        :disabled="uploading"
+        :class="[
+          'inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-[13px] font-medium shadow-sm transition-all duration-150 w-full sm:w-auto justify-center',
+          uploading
+            ? 'bg-emerald-500/60 text-white/70 cursor-not-allowed'
+            : 'bg-emerald-500 text-white hover:bg-emerald-400'
+        ]"
       >
-        <DocumentArrowUpIcon
-          class="-ml-0.5 mr-1.5 h-5 w-5"
-          aria-hidden="true"
-        />
-        Upload Documents
+        <svg v-if="uploading" class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <DocumentArrowUpIcon v-else class="h-4 w-4" aria-hidden="true" />
+        {{ uploading ? 'Uploading...' : 'Upload Documents' }}
       </button>
-      <input
-        type="file"
-        multiple
-        id="fileUpload"
-        class="hidden"
-        @change="uploadFile"
-      />
+      <input type="file" multiple accept=".pdf,.jpg,.jpeg,.png" id="fileUpload" class="hidden" @change="uploadFile" />
     </div>
   </div>
 </template>
@@ -39,13 +32,12 @@
 import { DocumentArrowUpIcon } from "@heroicons/vue/20/solid";
 
 const triggerFileUpload = () => {
-  console.log("click");
   document.getElementById("fileUpload").click();
 };
 
 const props = defineProps({
   uploadFile: Function,
+  uploading: { type: Boolean, default: false },
 });
-
 const uploadFile = props.uploadFile;
 </script>

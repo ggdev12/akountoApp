@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-white rounded-xl border border-[#eaeaea] p-6">
+  <div class="specular-card p-6">
     <div class="flex items-center justify-between mb-5">
       <div>
-        <h2 class="text-[14px] font-semibold text-[#171717]">Document Uploads</h2>
-        <p class="text-[12px] text-[#999] mt-0.5">Last 30 days</p>
+        <h2 class="text-[14px] font-semibold text-white">Document Uploads</h2>
+        <p class="text-[12px] text-[#525252] mt-0.5">Last 30 days</p>
       </div>
     </div>
     <div ref="chartRef" style="height: 260px"></div>
@@ -34,21 +34,23 @@ onMounted(async () => {
         toolbar: { show: false },
         fontFamily: 'Inter, system-ui, sans-serif',
         zoom: { enabled: false },
+        background: 'transparent',
       },
+      theme: { mode: 'dark' },
       dataLabels: { enabled: false },
       stroke: { curve: 'straight', width: 1.5 },
       xaxis: {
         type: 'datetime',
         categories: uploadData.value.map((item) => item.date),
-        labels: { style: { colors: '#999', fontSize: '11px', fontFamily: 'Inter' } },
+        labels: { style: { colors: '#525252', fontSize: '11px', fontFamily: 'Inter' } },
         axisBorder: { show: false },
         axisTicks: { show: false },
       },
       yaxis: {
-        labels: { style: { colors: '#999', fontSize: '11px', fontFamily: 'Inter' } },
+        labels: { style: { colors: '#525252', fontSize: '11px', fontFamily: 'Inter' } },
       },
       grid: {
-        borderColor: '#f5f5f5',
+        borderColor: 'rgba(255,255,255,0.04)',
         strokeDashArray: 0,
         xaxis: { lines: { show: false } },
         yaxis: { lines: { show: true } },
@@ -63,12 +65,16 @@ onMounted(async () => {
         type: 'gradient',
         gradient: {
           shadeIntensity: 1,
-          opacityFrom: 0.15,
+          opacityFrom: 0.3,
           opacityTo: 0.02,
           stops: [0, 100],
+          colorStops: [
+            { offset: 0, color: '#10b981', opacity: 0.3 },
+            { offset: 100, color: '#10b981', opacity: 0.02 },
+          ],
         },
       },
-      colors: ['#171717'],
+      colors: ['#10b981'],
     };
 
     const chart = new ApexCharts(chartRef.value, options);

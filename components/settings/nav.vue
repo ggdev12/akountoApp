@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="flex overflow-x-auto border-b border-gray-900/5 py-4 lg:block lg:w-56 lg:flex-none lg:border-0 lg:py-20"
+    class="flex overflow-x-auto border-b border-white/[0.06] py-4 lg:block lg:w-56 lg:flex-none lg:border-0 lg:py-20"
   >
     <nav class="flex-none px-4 sm:px-6 lg:px-0">
       <ul
@@ -12,8 +12,8 @@
             :href="item.href"
             :class="[
               item.current
-                ? 'bg-gray-50 text-indigo-600'
-                : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600',
+                ? 'bg-[#111111] text-emerald-400'
+                : 'text-[#a1a1a1] hover:bg-[#111111] hover:text-emerald-400',
               'group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6',
             ]"
           >
@@ -21,8 +21,8 @@
               :is="item.icon"
               :class="[
                 item.current
-                  ? 'text-indigo-600'
-                  : 'text-gray-400 group-hover:text-indigo-600',
+                  ? 'text-emerald-400'
+                  : 'text-[#525252] group-hover:text-emerald-400',
                 'h-6 w-6 shrink-0',
               ]"
               aria-hidden="true"
@@ -33,10 +33,10 @@
       </ul>
       <button
         @click="handleLogout"
-        class="group flex w-full gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600 mt-6"
+        class="group flex w-full gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6 text-[#a1a1a1] hover:bg-[#111111] hover:text-emerald-400 mt-6"
       >
         <ArrowRightOnRectangleIcon
-          class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+          class="h-6 w-6 shrink-0 text-[#525252] group-hover:text-emerald-400"
           aria-hidden="true"
         />
         Logout

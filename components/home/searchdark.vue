@@ -1,8 +1,8 @@
 <template>
     <div>
       <!-- Normal view -->
-      <div class="bg-gray-800 rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
-        <h3 class="text-sm font-semibold text-gray-300 mb-3">AI Assistant</h3>
+      <div class="bg-[#111111] rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
+        <h3 class="text-sm font-semibold text-[#a1a1a1] mb-3">AI Assistant</h3>
         <div class="relative">
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <MagnifyingGlassIcon class="h-5 w-5 text-blue-400 animate-pulse" />
@@ -14,22 +14,22 @@
             @blur="isInputFocused = false"
             type="text"
             placeholder="Ask anything..."
-            class="w-full pl-10 pr-4 py-2 text-lg bg-gray-700 text-white border-2 border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ease-in-out"
-            :class="{ 'ring-2 ring-blue-500 border-blue-500': isInputFocused }"
+            class="w-full pl-10 pr-4 py-2 text-lg bg-white/[0.06] text-white border-2 border-white/[0.08] rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 ease-in-out"
+            :class="{ 'ring-2 ring-emerald-500 border-emerald-500': isInputFocused }"
           />
           <div 
-            class="absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ease-in-out"
+            class="absolute bottom-0 left-0 h-0.5 bg-emerald-500 transition-all duration-300 ease-in-out"
             :style="{ width: inputAnimationWidth }"
           ></div>
         </div>
       </div>
   
       <!-- Full-screen modal -->
-      <div v-if="isFullScreen" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-50 overflow-auto transition-opacity duration-300 ease-in-out">
+      <div v-if="isFullScreen" class="fixed inset-0 bg-[#09090b] bg-opacity-95 z-50 overflow-auto transition-opacity duration-300 ease-in-out">
         <div class="max-w-4xl mx-auto p-4">
           <div class="flex justify-between items-center mb-4">
             <h2 class="text-xl font-bold text-white">AI Assistant</h2>
-            <button @click="closeFullScreen" class="text-gray-400 hover:text-white transition-colors duration-200">
+            <button @click="closeFullScreen" class="text-[#525252] hover:text-white transition-colors duration-200">
               <XMarkIcon class="h-6 w-6" />
             </button>
           </div>
@@ -42,11 +42,11 @@
               @keyup.enter="performSearch"
               type="text"
               placeholder="Ask anything about your finances..."
-              class="w-full pl-10 pr-4 py-3 text-lg bg-gray-800 text-white border-2 border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ease-in-out"
+              class="w-full pl-10 pr-4 py-3 text-lg bg-[#111111] text-white border-2 border-white/[0.08] rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300 ease-in-out"
             />
             <button
               @click="performSearch"
-              class="absolute inset-y-0 right-0 px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
+              class="absolute inset-y-0 right-0 px-4 py-2 bg-emerald-500 text-white rounded-r-lg hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-colors duration-200"
             >
               Ask
             </button>
@@ -54,8 +54,8 @@
           <div v-if="isLoading" class="text-center py-8">
             <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
           </div>
-          <div v-else-if="response" class="bg-gray-800 rounded-lg p-6 shadow-lg animate-fadeIn">
-            <p class="text-gray-200 mb-4">{{ response.text }}</p>
+          <div v-else-if="response" class="bg-[#111111] rounded-lg p-6 shadow-lg animate-fadeIn">
+            <p class="text-[#d4d4d8] mb-4">{{ response.text }}</p>
             <div v-if="response.chart" ref="chartRef" class="w-full h-64"></div>
           </div>
         </div>

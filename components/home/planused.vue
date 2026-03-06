@@ -1,27 +1,27 @@
 <template>
-  <div class="bg-white rounded-lg p-6">
-    <h3 class="text-lg font-semibold text-gray-700 mb-2">Your Current Plan</h3>
-    <!-- <p class="text-sm text-gray-500 mb-4">Here's how much you've used of your current plan:</p> -->
+  <div class="bg-[#0a0a0a] rounded-lg p-6">
+    <h3 class="text-lg font-semibold text-[#a1a1a1] mb-2">Your Current Plan</h3>
+    <!-- <p class="text-sm text-[#71717a] mb-4">Here's how much you've used of your current plan:</p> -->
     <div class="mb-4">
       <div class="flex justify-between mb-1">
-        <span class="text-sm text-gray-500">Documents Processed</span>
-        <span class="text-sm font-semibold text-gray-700"
+        <span class="text-sm text-[#71717a]">Documents Processed</span>
+        <span class="text-sm font-semibold text-[#a1a1a1]"
           >{{ usage.current }} / {{ usage.limit }}</span
         >
       </div>
-      <div class="w-full bg-gray-200 rounded-full h-2.5">
+      <div class="w-full bg-white/[0.06] rounded-full h-2.5">
         <div
-          class="bg-blue-600 h-2.5 rounded-full"
+          class="bg-emerald-500 h-2.5 rounded-full"
           :style="{ width: `${usagePercentage}%` }"
         ></div>
       </div>
     </div>
-    <p class="text-sm text-gray-500 mb-4">
+    <p class="text-sm text-[#71717a] mb-4">
       Need more? upgrade to a higher plan!
     </p>
     <button
       @click="upgradePlan"
-      class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      class="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-2 px-4 rounded"
     >
       Upgrade
     </button>

@@ -1,7 +1,7 @@
 <template>
     <section class="py-4 overflow-hidden">
       <div class="container px-4 mx-auto">
-        <div class="px-6 pt-5 pb-7 bg-white border rounded-xl">
+        <div class="px-6 pt-5 pb-7 bg-[#0a0a0a] border rounded-xl">
           <div class="flex flex-wrap -m-2">
             <div class="w-auto p-2">
               <div class="flex flex-col items-center justify-between h-full">
@@ -25,7 +25,7 @@
               <div class="flex flex-wrap max-w-sm pb-11 -m-1">
                 <div class="w-full sm:flex-1 p-1">
                   <input
-                    class="px-4 py-3.5 w-full text-sm text-neutral-400 hover:bg-gray-50 outline-none placeholder-neutral-400 border focus:border-neutral-600 border-neutral-200 rounded-lg"
+                    class="px-4 py-3.5 w-full text-sm text-neutral-400 hover:bg-[#111111] outline-none placeholder-neutral-400 border focus:border-neutral-600 border-neutral-200 rounded-lg"
                     id="stepsInput4-1"
                     type="text"
                     placeholder="Type a name"

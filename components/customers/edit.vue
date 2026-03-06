@@ -2,7 +2,7 @@
   <button
     type="button"
     @click="isEditModelOpen = true"
-    class="text-indigo-600 hover:text-indigo-900"
+    class="text-emerald-400 hover:text-emerald-300"
   >
     Edit
   </button>
@@ -34,11 +34,11 @@
             leave-to="opacity-0 scale-95"
           >
             <DialogPanel
-              class="w-full max-w-2xl transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle shadow-xl transition-all"
+              class="w-full max-w-2xl transform overflow-hidden rounded-lg bg-[#0a0a0a] p-6 text-left align-middle shadow-xl transition-all"
             >
               <DialogTitle
                 as="h3"
-                class="text-lg font-medium leading-6 text-gray-900"
+                class="text-lg font-medium leading-6 text-white"
               >
                 Edit customer
               </DialogTitle>
@@ -49,55 +49,55 @@
                     <div class="mb-5">
                       <label
                         for="name"
-                        class="block text-sm font-medium text-gray-700"
+                        class="block text-sm font-medium text-[#a1a1a1]"
                         >Customer Name</label
                       >
                       <input
                         type="text"
                         id="name"
                         v-model="editedCustomer.name"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                       />
                     </div>
 
                     <div class="mb-5">
                       <label
                         for="email"
-                        class="block text-sm font-medium text-gray-700"
+                        class="block text-sm font-medium text-[#a1a1a1]"
                         >Customer Email</label
                       >
                       <input
                         type="email"
                         id="email"
                         v-model="editedCustomer.email"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                       />
                     </div>
 
                     <div class="mb-5">
                       <label
                         for="phone"
-                        class="block text-sm font-medium text-gray-700"
+                        class="block text-sm font-medium text-[#a1a1a1]"
                         >Phone number</label
                       >
                       <input
                         type="text"
                         id="phone"
                         v-model="editedCustomer.phone"
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                        class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                       />
                     </div>
 
                     <div class="mb-5">
                       <label
-                        class="block text-sm font-medium text-gray-700 mb-2"
+                        class="block text-sm font-medium text-[#a1a1a1] mb-2"
                         >Billing Address</label
                       >
                       <div class="grid grid-cols-2 gap-4">
                         <div>
                           <label
                             for="line1"
-                            class="block text-xs font-medium text-gray-700"
+                            class="block text-xs font-medium text-[#a1a1a1]"
                             >Line 1</label
                           >
                           <input
@@ -109,14 +109,14 @@
                                 ? customer.billing_address.Line1 || ''
                                 : ''
                             "
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                           />
                         </div>
 
                         <div>
                           <label
                             for="state"
-                            class="block text-xs font-medium text-gray-700"
+                            class="block text-xs font-medium text-[#a1a1a1]"
                             >State</label
                           >
                           <input
@@ -128,13 +128,13 @@
                                 ? customer.billing_address.State || ''
                                 : ''
                             "
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                           />
                         </div>
                         <div>
                           <label
                             for="city"
-                            class="block text-xs font-medium text-gray-700"
+                            class="block text-xs font-medium text-[#a1a1a1]"
                             >City</label
                           >
                           <input
@@ -146,14 +146,14 @@
                                 ? customer.billing_address.City || ''
                                 : ''
                             "
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                           />
                         </div>
 
                         <div>
                           <label
                             for="zipCode"
-                            class="block text-xs font-medium text-gray-700"
+                            class="block text-xs font-medium text-[#a1a1a1]"
                             >Zip Code</label
                           >
                           <input
@@ -165,7 +165,7 @@
                                 ? customer.billing_address.ZipCode || ''
                                 : ''
                             "
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                           />
                         </div>
                       </div>
@@ -173,14 +173,14 @@
 
                     <div class="mb-5">
                       <label
-                        class="block text-sm font-medium text-gray-700 mb-2"
+                        class="block text-sm font-medium text-[#a1a1a1] mb-2"
                         >Shipping Address</label
                       >
                       <div class="grid grid-cols-2 gap-4">
                         <div>
                           <label
                             for="shippingLine1"
-                            class="block text-xs font-medium text-gray-700"
+                            class="block text-xs font-medium text-[#a1a1a1]"
                             >Line 1</label
                           >
                           <input
@@ -192,14 +192,14 @@
                                 ? customer.shipping_address.Line1 || ''
                                 : ''
                             "
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                           />
                         </div>
 
                         <div>
                           <label
                             for="shippingState"
-                            class="block text-xs font-medium text-gray-700"
+                            class="block text-xs font-medium text-[#a1a1a1]"
                             >State</label
                           >
                           <input
@@ -211,14 +211,14 @@
                                 ? customer.shipping_address.State || ''
                                 : ''
                             "
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                           />
                         </div>
 
                         <div>
                           <label
                             for="shippingCity"
-                            class="block text-xs font-medium text-gray-700"
+                            class="block text-xs font-medium text-[#a1a1a1]"
                             >City</label
                           >
                           <input
@@ -230,14 +230,14 @@
                                 ? customer.shipping_address.City || ''
                                 : ''
                             "
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                           />
                         </div>
 
                         <div>
                           <label
                             for="shippingZipCode"
-                            class="block text-xs font-medium text-gray-700"
+                            class="block text-xs font-medium text-[#a1a1a1]"
                             >Zip Code</label
                           >
                           <input
@@ -249,7 +249,7 @@
                                 ? customer.shipping_address.ZipCode || ''
                                 : ''
                             "
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                           />
                         </div>
                       </div>
@@ -259,7 +259,7 @@
                       <button
                         type="submit"
                         :disabled="loading"
-                        class="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="inline-flex justify-center rounded-md border border-transparent bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-400 hover:bg-emerald-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         Save
                       </button>

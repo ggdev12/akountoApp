@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-white rounded-lg  p-6">
-      <h3 class="text-lg font-semibold text-gray-700 mb-4">Invoice Status</h3>
+    <div class="bg-[#0a0a0a] rounded-lg  p-6">
+      <h3 class="text-lg font-semibold text-[#a1a1a1] mb-4">Invoice Status</h3>
       <div ref="chartRef" style="height: 200px;"></div>
     </div>
   </template>

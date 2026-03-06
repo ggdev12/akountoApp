@@ -1,25 +1,25 @@
 <template>
-  <div class="container mx-auto p-4 bg-white rounded-lg">
+  <div class="container mx-auto p-4 bg-[#0a0a0a] rounded-lg">
     <h2 class="text-xl font-semibold mb-4">Edit Receipt</h2>
     <form v-if="receipt.id" @submit.prevent="updateReceipt">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="mb-3">
           <label
             for="accountRef"
-            class="block text-sm font-medium text-gray-700"
+            class="block text-sm font-medium text-[#a1a1a1]"
             >Payee</label
           >
           <Listbox v-model="selectedPerson">
             <div class="relative mt-1">
               <ListboxButton
-                class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
+                class="relative w-full cursor-default rounded-lg bg-[#0a0a0a] py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
               >
                 <span class="block truncate">{{ selectedPerson.name }}</span>
                 <span
                   class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
                 >
                   <ChevronUpDownIcon
-                    class="h-5 w-5 text-gray-400"
+                    class="h-5 w-5 text-[#525252]"
                     aria-hidden="true"
                   />
                 </span>
@@ -31,7 +31,7 @@
                 leave-to-class="opacity-0"
               >
                 <ListboxOptions
-                  class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm"
+                  class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#0a0a0a] py-1 text-base shadow-lg ring-1 ring-white/[0.08] focus:outline-none sm:text-sm"
                 >
                   <ListboxOption
                     v-slot="{ active, selected }"
@@ -43,8 +43,8 @@
                     <li
                       :class="[
                         active
-                          ? 'bg-amber-100 text-amber-900'
-                          : 'text-gray-900',
+                          ? 'bg-emerald-500/10 text-emerald-400'
+                          : 'text-white',
                         'relative cursor-default select-none py-2 pl-10 pr-4',
                       ]"
                     >
@@ -57,7 +57,7 @@
                       >
                       <span
                         v-if="selected"
-                        class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                        class="absolute inset-y-0 left-0 flex items-center pl-3 text-emerald-400"
                       >
                         <CheckIcon class="h-5 w-5" aria-hidden="true" />
                       </span>
@@ -71,7 +71,7 @@
         <div class="mb-3">
           <label
             for="accountRef"
-            class="block text-sm font-medium text-gray-700"
+            class="block text-sm font-medium text-[#a1a1a1]"
             >Payment account</label
           >
           <input
@@ -79,96 +79,96 @@
             id="accountRef"
             v-model="receipt.account_ref"
             disabled
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            class="mt-1 block w-full rounded-md border-white/[0.08] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
           />
         </div>
         <div class="mb-3">
-          <label for="txnDate" class="block text-sm font-medium text-gray-700"
+          <label for="txnDate" class="block text-sm font-medium text-[#a1a1a1]"
             >Payment Date</label
           >
           <input
             type="date"
             id="txnDate"
             v-model="receipt.txn_date"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            class="mt-1 block w-full rounded-md border-white/[0.08] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
           />
         </div>
         <!-- <div class="mb-3">
           <label
             for="paymentType"
-            class="block text-sm font-medium text-gray-700"
+            class="block text-sm font-medium text-[#a1a1a1]"
             >Payment method</label
           >
           <input
             type="text"
             id="paymentType"
             v-model="receipt.payment_type"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            class="mt-1 block w-full rounded-md border-white/[0.08] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
           />
         </div> -->
         <!-- <div class="mb-3">
           <label
             for="totalAmount"
-            class="block text-sm font-medium text-gray-700"
+            class="block text-sm font-medium text-[#a1a1a1]"
             >Total Amount</label
           >
           <input
             type="number"
             id="totalAmount"
             v-model="receipt.total_amount"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            class="mt-1 block w-full rounded-md border-white/[0.08] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
           />
         </div> -->
         <div class="mb-3 col-span-1 md:col-span-2 lg:col-span-3">
-          <label class="block text-sm font-medium text-gray-700"
+          <label class="block text-sm font-medium text-[#a1a1a1]"
             >Line Items</label
           >
-          <table class="min-w-full divide-y divide-gray-200 mt-2">
-            <thead class="bg-gray-50">
+          <table class="min-w-full divide-y divide-white/[0.06] mt-2">
+            <thead class="bg-[#111111]">
               <tr>
                 <th
                   scope="col"
-                  class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  class="px-4 py-2 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                 >
                   Category
                 </th>
                 <th
                   scope="col"
-                  class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  class="px-4 py-2 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                 >
                   Amount
                 </th>
                 <th
                   scope="col"
-                  class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  class="px-4 py-2 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                 >
                   Status
                 </th>
                 <th
                   scope="col"
-                  class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  class="px-4 py-2 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                 >
                   Tax code
                 </th>
               </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
+            <tbody class="bg-[#0a0a0a] divide-y divide-white/[0.06]">
               <tr
                 v-for="item in receipt.PurchaseLineItems"
                 :key="item.id"
                 class="hover:bg-slate-100 hover:cursor-pointer"
                 @click="editFieldValue(item)"
               >
-                <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
+                <td class="px-4 py-2 whitespace-nowrap text-sm text-[#71717a]">
                   {{ item.account_ref }}
                 </td>
-                <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
+                <td class="px-4 py-2 whitespace-nowrap text-sm text-[#71717a]">
                   {{ item.amount }}
                 </td>
-                <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
+                <td class="px-4 py-2 whitespace-nowrap text-sm text-[#71717a]">
                   {{ item.billable_status }}
                 </td>
-                <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">
+                <td class="px-4 py-2 whitespace-nowrap text-sm text-[#71717a]">
                   {{ item.tax_code_ref }}
                 </td>
               </tr>
@@ -179,7 +179,7 @@
       <div class="flex justify-end">
         <button
           type="submit"
-          class="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          class="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-500 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
         >
           Save
         </button>

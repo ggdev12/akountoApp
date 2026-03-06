@@ -1,36 +1,36 @@
 <template>
-    <div class="bg-white rounded-lg p-6">
-      <!-- <h3 class="text-md font-semibold text-gray-700 mb-4">Upload Documents</h3> -->
+    <div class="bg-[#0a0a0a] rounded-lg p-6">
+      <!-- <h3 class="text-md font-semibold text-[#a1a1a1] mb-4">Upload Documents</h3> -->
       <div
         @dragover.prevent="dragOver"
         @dragleave.prevent="dragLeave"
         @drop.prevent="handleDrop"
         :class="[
           'border-2 border-dashed rounded-lg p-8 text-center',
-          isDragging ? 'border-blue-500 bg-blue-50' : 'border-gray-300 hover:border-blue-500',
+          isDragging ? 'border-emerald-500 bg-emerald-500/5' : 'border-white/[0.08] hover:border-emerald-500',
         ]"
       >
         <div v-if="!file">
-          <DocumentArrowUpIcon class="mx-auto h-12 w-12 text-gray-400" />
-          <p class="mt-2 text-sm text-gray-600">
+          <DocumentArrowUpIcon class="mx-auto h-12 w-12 text-[#525252]" />
+          <p class="mt-2 text-sm text-[#a1a1a1]">
             Drag and drop your file here, or
             <button
               @click="openFileDialog"
-              class="font-medium text-blue-600 hover:text-blue-500"
+              class="font-medium text-emerald-400 hover:text-emerald-400"
             >
               browse
             </button>
           </p>
-          <p class="mt-1 text-xs text-gray-500">
+          <p class="mt-1 text-xs text-[#71717a]">
             PDF, PNG, JPG up to 10MB
           </p>
         </div>
         <div v-else>
-          <DocumentIcon class="mx-auto h-12 w-12 text-blue-500" />
-          <p class="mt-2 text-sm font-medium text-gray-900">
+          <DocumentIcon class="mx-auto h-12 w-12 text-emerald-400" />
+          <p class="mt-2 text-sm font-medium text-white">
             {{ file.name }}
           </p>
-          <p class="mt-1 text-xs text-gray-500">
+          <p class="mt-1 text-xs text-[#71717a]">
             {{ formatFileSize(file.size) }}
           </p>
           <button
@@ -51,7 +51,7 @@
       <button
         v-if="file"
         @click="uploadFile"
-        class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        class="mt-4 w-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-2 px-4 rounded"
       >
         Upload Document
       </button>

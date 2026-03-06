@@ -1,10 +1,10 @@
 <template>
   <div class="flex-1">
-    <div class="bg-white rounded-lg">
+    <div class="bg-[#0a0a0a] rounded-lg">
       <form action="/upload" class="dropzone" id="expenseDropzone">
         <div class="dz-message">
           <p>Drag and drop files here or click to upload.</p>
-          <p class="text-gray-600">(Images or PDFs only)</p>
+          <p class="text-[#a1a1a1]">(Images or PDFs only)</p>
         </div>
       </form>
     </div>

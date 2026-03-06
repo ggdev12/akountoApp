@@ -1,15 +1,15 @@
 <template>
 
     <div
-        class="bg-white p-5 sticky top-0 z-40 flex items-center justify-between border-b border-gray-200 -mx-8 -mt-10 ">
+        class="bg-[#0a0a0a] p-5 sticky top-0 z-40 flex items-center justify-between border-b border-white/[0.06] -mx-8 -mt-10 ">
         <div class="flex-1">
-            <h2 class="text-2xl font-bold leading-7 text-gray-9000 sm:text-3xl sm:tracking-tight">Account settings</h2>
-            <p class="mt-2 text-sm text-gray-500">Manage your account settings.</p>
+            <h2 class="text-2xl font-bold leading-7 text-white sm:text-3xl sm:tracking-tight">Account settings</h2>
+            <p class="mt-2 text-sm text-[#71717a]">Manage your account settings.</p>
         </div>
 
     </div>
 
-    <div class="mx-auto max-w-7xl lg:flex lg:gap-x-16 lg:px-8 bg-gray-100">
+    <div class="mx-auto max-w-7xl lg:flex lg:gap-x-16 lg:px-8 bg-[#09090b]">
         <h1 class="sr-only">General Settings</h1>
 
         <SettingsNav />

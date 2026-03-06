@@ -1,11 +1,11 @@
 <template>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <!-- Visitors Widget -->
-      <div class="bg-white p-4 rounded-lg shadow-sm">
+      <div class="bg-[#0a0a0a] p-4 rounded-lg shadow-sm">
         <div class="flex items-center justify-between mb-2">
           <div class="flex items-center space-x-2">
-            <Users class="text-gray-400" :size="20" />
-            <span class="text-sm font-medium text-gray-500">Visitors</span>
+            <Users class="text-[#525252]" :size="20" />
+            <span class="text-sm font-medium text-[#71717a]">Visitors</span>
           </div>
         </div>
         <div class="flex items-baseline justify-between">
@@ -18,11 +18,11 @@
       </div>
   
       <!-- Support Requests Widget -->
-      <div class="bg-white p-4 rounded-lg shadow-sm">
+      <div class="bg-[#0a0a0a] p-4 rounded-lg shadow-sm">
         <div class="flex items-center justify-between mb-2">
           <div class="flex items-center space-x-2">
-            <MessageSquare class="text-gray-400" :size="20" />
-            <span class="text-sm font-medium text-gray-500">Support Requests</span>
+            <MessageSquare class="text-[#525252]" :size="20" />
+            <span class="text-sm font-medium text-[#71717a]">Support Requests</span>
           </div>
         </div>
         <div class="flex items-baseline justify-between">
@@ -35,11 +35,11 @@
       </div>
   
       <!-- Median Response Time Widget -->
-      <div class="bg-white p-4 rounded-lg shadow-sm">
+      <div class="bg-[#0a0a0a] p-4 rounded-lg shadow-sm">
         <div class="flex items-center justify-between mb-2">
           <div class="flex items-center space-x-2">
-            <Clock class="text-gray-400" :size="20" />
-            <span class="text-sm font-medium text-gray-500">Median Response Time</span>
+            <Clock class="text-[#525252]" :size="20" />
+            <span class="text-sm font-medium text-[#71717a]">Median Response Time</span>
           </div>
         </div>
         <div class="flex items-baseline justify-between">
@@ -52,11 +52,11 @@
       </div>
   
       <!-- Customer Score Widget -->
-      <div class="bg-white p-4 rounded-lg shadow-sm">
+      <div class="bg-[#0a0a0a] p-4 rounded-lg shadow-sm">
         <div class="flex items-center justify-between mb-2">
           <div class="flex items-center space-x-2">
-            <ThumbsUp class="text-gray-400" :size="20" />
-            <span class="text-sm font-medium text-gray-500">Customer Score</span>
+            <ThumbsUp class="text-[#525252]" :size="20" />
+            <span class="text-sm font-medium text-[#71717a]">Customer Score</span>
           </div>
         </div>
         <div class="flex items-baseline justify-between">

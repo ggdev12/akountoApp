@@ -1,8 +1,8 @@
 <template>
   <div class="container mx-auto px-4 py-8">
     <div class="overflow-x-auto sm:rounded-lg">
-      <table class="w-full text-sm text-left text-gray-500">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+      <table class="w-full text-sm text-left text-[#71717a]">
+        <thead class="text-xs text-[#a1a1a1] uppercase bg-[#111111]">
           <tr>
             <th scope="col" class="px-6 py-3">Date</th>
             <th scope="col" class="px-6 py-3">Action</th>
@@ -15,7 +15,7 @@
           <tr
             v-for="item in history"
             :key="item.id"
-            class="bg-white border-b hover:bg-gray-50"
+            class="bg-[#0a0a0a] border-b hover:bg-[#111111]"
           >
             <td class="px-6 py-4">{{ formatDate(item.date) }}</td>
             <td class="px-6 py-4">
@@ -75,11 +75,11 @@ export default {
         case "unsubscribe":
           return "text-red-600 bg-red-100 px-2 py-1 rounded";
         case "upgrade":
-          return "text-blue-600 bg-blue-100 px-2 py-1 rounded";
+          return "text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded";
         case "downgrade":
           return "text-green-600 bg-green-100 px-2 py-1 rounded";
         default:
-          return "text-gray-600 bg-gray-100 px-2 py-1 rounded";
+          return "text-[#a1a1a1] bg-[#09090b] px-2 py-1 rounded";
       }
     },
   },

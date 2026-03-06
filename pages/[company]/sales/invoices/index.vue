@@ -1,19 +1,19 @@
 <template>
   <header
-    class="pb-4 pt-6 sm:pb-6 bg-white mt-0 mb-10 rounded-lg sticky top-5 z-10"
+    class="pb-4 pt-6 sm:pb-6 bg-[#0a0a0a] mt-0 mb-10 rounded-lg sticky top-5 z-10"
     v-if="documents"
   >
     <div
       class="mx-auto flex max-w-7xl flex-wrap items-center gap-6 px-4 sm:flex-nowrap"
     >
-      <h1 class="text-base font-semibold leading-7 text-gray-900">Invoices</h1>
+      <h1 class="text-base font-semibold leading-7 text-white">Invoices</h1>
       <div
-        class="order-last flex w-full gap-x-8 text-sm font-semibold leading-6 sm:order-none sm:w-auto sm:border-l sm:border-gray-200 sm:pl-6 sm:leading-7"
+        class="order-last flex w-full gap-x-8 text-sm font-semibold leading-6 sm:order-none sm:w-auto sm:border-l sm:border-white/[0.06] sm:pl-6 sm:leading-7"
       >
         <button
           :class="{
-            'text-indigo-600': documentStatus === 'Ready',
-            'text-gray-700': documentStatus !== 'Ready',
+            'text-emerald-400': documentStatus === 'Ready',
+            'text-[#a1a1a1]': documentStatus !== 'Ready',
           }"
           @click="changeDocumentStatus('Ready')"
         >
@@ -25,8 +25,8 @@
         </button>
         <button
           :class="{
-            'text-indigo-600': documentStatus === 'MissingData',
-            'text-gray-700': documentStatus !== 'MissingData',
+            'text-emerald-400': documentStatus === 'MissingData',
+            'text-[#a1a1a1]': documentStatus !== 'MissingData',
           }"
           @click="changeDocumentStatus('MissingData')"
         >
@@ -39,14 +39,14 @@
 
         <button
           :class="{
-            'text-indigo-600': documentStatus === 'Extraction',
-            'text-gray-700': documentStatus !== 'Extraction',
+            'text-emerald-400': documentStatus === 'Extraction',
+            'text-[#a1a1a1]': documentStatus !== 'Extraction',
           }"
           @click="changeDocumentStatus('Extraction')"
         >
           Processing
           <span
-            class="inline-flex items-center justify-center px-2 py-1 ml-2 text-xs font-bold leading-none text-blue-100 bg-blue-600 rounded-full"
+            class="inline-flex items-center justify-center px-2 py-1 ml-2 text-xs font-bold leading-none text-blue-100 bg-emerald-500 rounded-full"
             >{{ documentCounts.processing }}</span
           >
         </button>
@@ -54,7 +54,7 @@
 
       <button
         @click="triggerFileUpload"
-        class="ml-auto flex items-center gap-x-1 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        class="ml-auto flex items-center gap-x-1 rounded-md bg-emerald-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500"
       >
         <svg
           class="-ml-1.5 h-5 w-5"
@@ -82,7 +82,7 @@
 
   <section class="pt-0 pb-10 overflow-hidden" v-if="documents.length == 0">
     <div class="container px-0 mx-auto">
-      <div class="p-6 bg-white border rounded-lg">
+      <div class="p-6 bg-[#0a0a0a] border rounded-lg">
         <div class="flex flex-wrap -m-2.5">
           <div class="w-full sm:w-1/3 p-2.5">
             <div class="flex flex-col justify-between pl-10 pt-4">
@@ -143,7 +143,7 @@
                 </ul>
 
                 <a
-                  class="hidden inline-flex flex-wrap items-center justify-center px-3 py-2 text-center text-neutral-50 font-medium bg-indigo-700 hover:bg-indigo-500 rounded-lg transition duration-300"
+                  class="hidden inline-flex flex-wrap items-center justify-center px-3 py-2 text-center text-neutral-50 font-medium bg-indigo-700 hover:bg-emerald-400 rounded-lg transition duration-300"
                   href="#"
                 >
                   <span class="mr-3 font-medium">Get Started</span>
@@ -167,7 +167,7 @@
             </div>
           </div>
           <div class="w-full sm:w-1/6 p-2.5"></div>
-          <div class="w-full sm:w-1/2 p-2.5 border-l border-gray-200">
+          <div class="w-full sm:w-1/2 p-2.5 border-l border-white/[0.06]">
             <Upload class="m-6" />
           </div>
         </div>
@@ -179,11 +179,11 @@
     class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 overflow-auto"
   >
     <div
-      class="bg-white rounded-lg shadow-md"
+      class="bg-[#0a0a0a] rounded-lg shadow-md"
       v-for="document in filteredDocuments"
       :key="document.id"
     >
-      <div class="p-4 border-b border-gray-200">
+      <div class="p-4 border-b border-white/[0.06]">
         <h3 class="text-lg font-semibold mb-0">Expense Receipt #1</h3>
       </div>
       <img
@@ -193,11 +193,11 @@
         class="w-full h-48 object-fill rounded-t-lg"
         height="50px"
       />
-      <div v-else class="animate-pulse w-full h-56 bg-gray-300"></div>
+      <div v-else class="animate-pulse w-full h-56 bg-white/[0.08]"></div>
 
-      <div class="p-4 border-t border-gray-200">
+      <div class="p-4 border-t border-white/[0.06]">
         <!-- <h3 class="text-lg font-semibold mb-1">Expense Receipt #1</h3> -->
-        <p class="text-gray-600 text-sm mb-2 border-b border-gray-200 pb-4">
+        <p class="text-[#a1a1a1] text-sm mb-2 border-b border-white/[0.06] pb-4">
           <span class="font-semibold">Date: </span
           >{{ moment(document.Invoice.date).format("YYYY-MM-DD") }}<br />
           <span class="font-semibold">Amount:</span> ${{
@@ -208,7 +208,7 @@
         <div class="flex justify-between items-center pt-2">
           <span
             v-if="document.status === 'Inbox'"
-            class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-800"
+            class="inline-flex items-center rounded-full bg-[#09090b] px-3 py-1 text-sm font-medium text-white"
             >Inbox</span
           >
           <span
@@ -238,12 +238,12 @@
           >
           <span
             v-else-if="document.status === 'Processing'"
-            class="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800"
+            class="inline-flex items-center rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-blue-800"
             >Processing</span
           >
           <NuxtLink
             :to="`/${$route.params.company}/sales/invoices/edit/?id=${document.id}`"
-            class="text-blue-500 hover:text-blue-600 text-sm"
+            class="text-emerald-400 hover:text-emerald-400 text-sm"
             >View Details</NuxtLink
           >
         </div>
@@ -252,50 +252,50 @@
     <!-- Add more expense cards -->
   </div>
 
-  <div class="bg-white rounded-lg overflow-hidden hidden">
-    <div class="bg-white overflow-hidden">
-      <div class="bg-white rounded-lg overflow-hidden">
+  <div class="bg-[#0a0a0a] rounded-lg overflow-hidden hidden">
+    <div class="bg-[#0a0a0a] overflow-hidden">
+      <div class="bg-[#0a0a0a] rounded-lg overflow-hidden">
         <div class="overflow-x-auto">
-          <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-gray-50">
+          <table class="min-w-full divide-y divide-white/[0.06]">
+            <thead class="bg-[#111111]">
               <tr>
                 <th
                   scope="col"
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  class="px-6 py-3 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                 >
                   Document ID
                 </th>
                 <th
                   scope="col"
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  class="px-6 py-3 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                 >
                   Status
                 </th>
                 <th
                   scope="col"
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  class="px-6 py-3 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                 >
                   Created At
                 </th>
                 <th
                   scope="col"
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  class="px-6 py-3 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                 >
                   Vendor
                 </th>
                 <th
                   scope="col"
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  class="px-6 py-3 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                 >
                   Category
                 </th>
               </tr>
             </thead>
             {{}}
-            <tbody class="bg-white divide-y divide-gray-200">
+            <tbody class="bg-[#0a0a0a] divide-y divide-white/[0.06]">
               <tr v-for="document in documents" :key="document.id">
                 <td
-                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-white"
                 >
                   <NuxtLink
                     :to="`/${$route.params.company}/sales/invoices/edit/?id=${document.id}`"
@@ -303,10 +303,10 @@
                   </NuxtLink>
                 </td>
 
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-[#71717a]">
                   <span
                     v-if="document.status === 'Inbox'"
-                    class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-800"
+                    class="inline-flex items-center rounded-full bg-[#09090b] px-3 py-1 text-sm font-medium text-white"
                     >Inbox</span
                   >
                   <span
@@ -336,24 +336,24 @@
                   >
                   <span
                     v-else-if="document.status === 'Processing'"
-                    class="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800"
+                    class="inline-flex items-center rounded-full bg-emerald-500/10 px-3 py-1 text-sm font-medium text-blue-800"
                     >Processing</span
                   >
                 </td>
 
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-[#71717a]">
                   {{ document.createdAt }}
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-[#71717a]">
                   <select
-                    class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    class="block w-full pl-3 pr-10 py-2 text-base border-white/[0.08] focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md"
                   >
                     <option>Select Vendor</option>
                   </select>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-[#71717a]">
                   <select
-                    class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                    class="block w-full pl-3 pr-10 py-2 text-base border-white/[0.08] focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md"
                   >
                     <option>Select Category</option>
                   </select>
@@ -363,18 +363,18 @@
           </table>
         </div>
         <div
-          class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
+          class="bg-[#0a0a0a] px-4 py-3 flex items-center justify-between border-t border-white/[0.06] sm:px-6"
         >
           <div class="flex-1 flex justify-between sm:hidden">
             <a
               href="#"
-              class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+              class="relative inline-flex items-center px-4 py-2 border border-white/[0.08] text-sm font-medium rounded-md text-[#a1a1a1] bg-[#0a0a0a] hover:bg-[#111111]"
             >
               Previous
             </a>
             <a
               href="#"
-              class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+              class="ml-3 relative inline-flex items-center px-4 py-2 border border-white/[0.08] text-sm font-medium rounded-md text-[#a1a1a1] bg-[#0a0a0a] hover:bg-[#111111]"
             >
               Next
             </a>
@@ -383,7 +383,7 @@
             class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"
           >
             <div>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-[#a1a1a1]">
                 Showing
                 <span class="font-medium">1</span>
                 to
@@ -400,7 +400,7 @@
               >
                 <a
                   href="#"
-                  class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+                  class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-white/[0.08] bg-[#0a0a0a] text-sm font-medium text-[#71717a] hover:bg-[#111111]"
                 >
                   <span class="sr-only">Previous</span>
                   <svg
@@ -419,19 +419,19 @@
                 <a
                   href="#"
                   aria-current="page"
-                  class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                  class="z-10 bg-indigo-50 border-indigo-500 text-emerald-400 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
                 >
                   1
                 </a>
                 <a
                   href="#"
-                  class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                  class="bg-[#0a0a0a] border-white/[0.08] text-[#71717a] hover:bg-[#111111] relative inline-flex items-center px-4 py-2 border text-sm font-medium"
                 >
                   2
                 </a>
                 <a
                   href="#"
-                  class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+                  class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-white/[0.08] bg-[#0a0a0a] text-sm font-medium text-[#71717a] hover:bg-[#111111]"
                 >
                   <span class="sr-only">Next</span>
                   <svg

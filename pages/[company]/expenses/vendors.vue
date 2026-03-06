@@ -2,8 +2,8 @@
   <div class="px-4 sm:px-6 lg:px-8">
     <div class="sm:flex sm:items-center">
       <div class="sm:flex-auto">
-        <h1 class="text-base font-semibold leading-6 text-gray-900">Vendors</h1>
-        <p class="mt-2 text-sm text-gray-700">
+        <h1 class="text-base font-semibold leading-6 text-white">Vendors</h1>
+        <p class="mt-2 text-sm text-[#a1a1a1]">
           A detailed list of all vendors including their contact information,
           status, and account balance.
         </p>
@@ -12,7 +12,7 @@
         <button
           type="button"
           @click="isAddVendorModalOpen = true"
-          class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          class="block rounded-md bg-emerald-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500"
         >
           Add Vendor
         </button>
@@ -20,7 +20,7 @@
     </div>
     <div
       v-if="isAddVendorModalOpen"
-      class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
+      class="fixed inset-0 bg-black/60 bg-opacity-50 overflow-y-auto h-full w-full"
     >
       <VendorsAdd
         :isAddVendorModalOpen="isAddVendorModalOpen"
@@ -33,30 +33,30 @@
       <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
           <div class="overflow-hidden ring-1 ring-black ring-opacity-5">
-            <table class="min-w-full divide-y divide-gray-300">
-              <thead class="bg-gray-50">
+            <table class="min-w-full divide-y divide-white/[0.08]">
+              <thead class="bg-[#111111]">
                 <tr>
                   <th
                     scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-6"
                   >
                     Name
                   </th>
                   <th
                     scope="col"
-                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    class="px-3 py-3.5 text-left text-sm font-semibold text-white"
                   >
                     Email
                   </th>
                   <th
                     scope="col"
-                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    class="px-3 py-3.5 text-left text-sm font-semibold text-white"
                   >
                     Phone
                   </th>
                   <th
                     scope="col"
-                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    class="px-3 py-3.5 text-left text-sm font-semibold text-white"
                   >
                     Address
                   </th>
@@ -65,20 +65,20 @@
                   </th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-gray-200 bg-white">
+              <tbody class="divide-y divide-white/[0.06] bg-[#0a0a0a]">
                 <tr v-for="vendor in vendors.results" :key="vendor.id">
                   <td
-                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"
+                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-6"
                   >
                     {{ vendor.name }}
                   </td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-[#71717a]">
                     {{ vendor.email }}
                   </td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-[#71717a]">
                     {{ vendor.phone }}
                   </td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-[#71717a]">
                     {{
                       vendor.address
                         ? `${vendor.address.Line1 || ""}${vendor.address.City ? ", " + vendor.address.City : ""}${vendor.address.State ? ", " + vendor.address.State : ""}${vendor.address.ZipCode ? ", " + vendor.address.ZipCode : ""}`
@@ -102,11 +102,11 @@
       </div>
 
       <nav
-        class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6"
+        class="flex items-center justify-between border-t border-white/[0.06] bg-[#0a0a0a] px-4 py-3 sm:px-6"
         aria-label="Pagination"
       >
         <div class="hidden sm:block">
-          <p class="text-sm text-gray-700">
+          <p class="text-sm text-[#a1a1a1]">
             Showing
             <span class="font-medium">{{
               (pagination.currentPage - 1) * 10 + 1
@@ -123,14 +123,14 @@
         <div class="flex flex-1 justify-between sm:justify-end">
           <a
             href="#"
-            class="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0"
+            class="relative inline-flex items-center rounded-md bg-[#0a0a0a] px-3 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white/[0.08] hover:bg-[#111111] focus-visible:outline-offset-0"
             @click="fetchVendors(pagination.currentPage - 1)"
             v-if="pagination.currentPage > 1"
             >Previous</a
           >
           <a
             href="#"
-            class="relative ml-3 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0"
+            class="relative ml-3 inline-flex items-center rounded-md bg-[#0a0a0a] px-3 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white/[0.08] hover:bg-[#111111] focus-visible:outline-offset-0"
             @click="fetchVendors(pagination.currentPage + 1)"
             v-if="pagination.currentPage < pagination.totalPages"
             >Next</a

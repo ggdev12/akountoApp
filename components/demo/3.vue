@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white p-6 rounded-lg shadow-sm">
+  <div class="bg-[#0a0a0a] p-6 rounded-lg shadow-sm">
     <h3 class="text-lg font-semibold mb-4">Breakdown by Visitor type</h3>
     <div class="h-64">
       <DoughnutChart :data="chartData" :options="chartOptions" />
@@ -8,7 +8,7 @@
       <div v-for="(item, index) in visitorTypeData" :key="index" class="text-center">
         <div :class="['w-3 h-3 rounded-full mx-auto mb-1', item.color]"></div>
         <div class="text-sm font-medium">{{ item.percentage }}%</div>
-        <div class="text-xs text-gray-500">{{ item.label }}</div>
+        <div class="text-xs text-[#71717a]">{{ item.label }}</div>
       </div>
     </div>
   </div>

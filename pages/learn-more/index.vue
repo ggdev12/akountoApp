@@ -117,7 +117,7 @@
               >
               with QuickBooks
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8">
+            <p class="text-lg md:text-xl text-[#a1a1a1] mb-8">
               Unlock effortless accounting by integrating Akounto with
               QuickBooks. Enjoy streamlined workflows, automated document
               processing, real-time tracking, and intelligent financial
@@ -128,7 +128,7 @@
               <div class="flex -space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-gray-300"
+                  class="h-6 w-6 text-[#a1a1a1]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -141,7 +141,7 @@
                   ></path>
                 </svg>
               </div>
-              <p class="text-gray-300">
+              <p class="text-[#a1a1a1]">
                 Trusted by 10,000+ businesses worldwide
               </p>
             </div>
@@ -168,19 +168,19 @@
         >
           <div class="text-center">
             <h4 class="text-3xl font-bold text-[#5B53FD]">98%</h4>
-            <p class="text-gray-400">Processing Accuracy</p>
+            <p class="text-[#525252]">Processing Accuracy</p>
           </div>
           <div class="text-center">
             <h4 class="text-3xl font-bold text-[#5B53FD]">2M+</h4>
-            <p class="text-gray-400">Documents Processed</p>
+            <p class="text-[#525252]">Documents Processed</p>
           </div>
           <div class="text-center">
             <h4 class="text-3xl font-bold text-[#5B53FD]">50k+</h4>
-            <p class="text-gray-400">Active Users</p>
+            <p class="text-[#525252]">Active Users</p>
           </div>
           <div class="text-center">
             <h4 class="text-3xl font-bold text-[#5B53FD]">4.9/5</h4>
-            <p class="text-gray-400">Customer Rating</p>
+            <p class="text-[#525252]">Customer Rating</p>
           </div>
         </div>
       </div>
@@ -199,7 +199,7 @@
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
             Real-Time Performance Metrics
           </h2>
-          <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p class="text-lg text-[#525252] max-w-2xl mx-auto">
             Track your business performance with detailed analytics and insights
           </p>
         </div>
@@ -227,7 +227,7 @@
               <span class="text-3xl font-bold">62.50%</span>
               <span class="text-green-400 text-sm mb-1">↑ 5.25%</span>
             </div>
-            <p class="text-gray-400 text-sm">8 scanned, 5 auto-processed</p>
+            <p class="text-[#525252] text-sm">8 scanned, 5 auto-processed</p>
             <div class="w-full bg-neutral-700 rounded-full h-2 mt-4">
               <div
                 class="bg-[#5B53FD] h-2 rounded-full"
@@ -257,7 +257,7 @@
               <span class="text-3xl font-bold">1/10</span>
               <span class="text-yellow-400 text-sm mb-1">Active Users</span>
             </div>
-            <p class="text-gray-400 text-sm">10% utilization rate</p>
+            <p class="text-[#525252] text-sm">10% utilization rate</p>
             <div class="w-full bg-neutral-700 rounded-full h-2 mt-4">
               <div
                 class="bg-[#5B53FD] h-2 rounded-full"
@@ -287,7 +287,7 @@
               <span class="text-3xl font-bold">2/8</span>
               <span class="text-green-400 text-sm mb-1">GB Used</span>
             </div>
-            <p class="text-gray-400 text-sm">25% storage utilized</p>
+            <p class="text-[#525252] text-sm">25% storage utilized</p>
             <div class="w-full bg-neutral-700 rounded-full h-2 mt-4">
               <div
                 class="bg-[#5B53FD] h-2 rounded-full"
@@ -317,7 +317,7 @@
               <span class="text-3xl font-bold">8/100</span>
               <span class="text-[#5B53FD] text-sm mb-1">Scanned</span>
             </div>
-            <p class="text-gray-400 text-sm">8% quota utilized</p>
+            <p class="text-[#525252] text-sm">8% quota utilized</p>
             <div class="w-full bg-neutral-700 rounded-full h-2 mt-4">
               <div
                 class="bg-[#5B53FD] h-2 rounded-full"
@@ -330,7 +330,7 @@
     </section>
 
     <!-- Dashboard Preview Section -->
-    <section id="dashboard-preview" class="py-20 bg-white">
+    <section id="dashboard-preview" class="py-20 bg-[#0a0a0a]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center mb-16">
@@ -357,7 +357,7 @@
             <div class="absolute -z-10 inset-0 bg-purple-500/20 blur-3xl"></div>
             <!-- Interactive Overlay Indicators -->
             <div
-              class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-lg"
+              class="absolute top-4 right-4 bg-[#0a0a0a]/90 backdrop-blur-sm p-3 rounded-lg shadow-lg"
             >
               <div class="flex items-center gap-2">
                 <div
@@ -387,7 +387,7 @@
             <div class="space-y-4">
               <!-- New Invoice Activity -->
               <div
-                class="bg-white p-4 rounded-lg border border-neutral-200 hover:shadow-md transition-all group"
+                class="bg-[#0a0a0a] p-4 rounded-lg border border-neutral-200 hover:shadow-md transition-all group"
               >
                 <div class="flex items-center gap-4">
                   <div
@@ -434,7 +434,7 @@
 
               <!-- Payment Received Activity -->
               <div
-                class="bg-white p-4 rounded-lg border border-neutral-200 hover:shadow-md transition-all group"
+                class="bg-[#0a0a0a] p-4 rounded-lg border border-neutral-200 hover:shadow-md transition-all group"
               >
                 <div class="flex items-center gap-4">
                   <div
@@ -477,14 +477,14 @@
 
               <!-- Document Sync Activity -->
               <div
-                class="bg-white p-4 rounded-lg border border-neutral-200 hover:shadow-md transition-all group"
+                class="bg-[#0a0a0a] p-4 rounded-lg border border-neutral-200 hover:shadow-md transition-all group"
               >
                 <div class="flex items-center gap-4">
                   <div
-                    class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors"
+                    class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors"
                   >
                     <svg
-                      class="w-5 h-5 text-blue-600"
+                      class="w-5 h-5 text-emerald-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -511,7 +511,7 @@
                     </div>
                     <div class="mt-2">
                       <span
-                        class="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded-full"
+                        class="text-xs px-2 py-1 bg-emerald-500/10 text-blue-800 rounded-full"
                         >Automated</span
                       >
                     </div>
@@ -556,7 +556,7 @@
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
             Why Choose Akounto?
           </h2>
-          <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p class="text-lg text-[#525252] max-w-2xl mx-auto">
             Transform your financial management with our powerful and flexible
             accounting tools designed for modern businesses
           </p>
@@ -587,7 +587,7 @@
                 >
                   Real-Time Activity Tracking
                 </h3>
-                <p class="text-gray-400 leading-relaxed">
+                <p class="text-[#525252] leading-relaxed">
                   Monitor document processing, user activities, and system
                   performance in real-time with detailed insights for better
                   decision making.
@@ -634,7 +634,7 @@
                 >
                   Customer & Vendor Management
                 </h3>
-                <p class="text-gray-400 leading-relaxed">
+                <p class="text-[#525252] leading-relaxed">
                   Centralized platform to efficiently manage all your business
                   relationships, communications, and transactions in one place.
                 </p>
@@ -683,7 +683,7 @@
                 >
                   Advanced Analytics
                 </h3>
-                <p class="text-gray-400 leading-relaxed">
+                <p class="text-[#525252] leading-relaxed">
                   Gain powerful insights into your business performance with
                   comprehensive analytics, custom reports, and predictive
                   forecasting.
@@ -730,7 +730,7 @@
                 >
                   Intelligent Automation
                 </h3>
-                <p class="text-gray-400 leading-relaxed">
+                <p class="text-[#525252] leading-relaxed">
                   Streamline workflows with AI-powered automation for document
                   processing, data entry, and financial reconciliation.
                 </p>
@@ -760,7 +760,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-white">
+    <section id="testimonials" class="py-20 bg-[#0a0a0a]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div class="text-center mb-16">
@@ -781,7 +781,7 @@
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Testimonial 1 -->
           <div
-            class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-neutral-200 group"
+            class="bg-[#0a0a0a] p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-neutral-200 group"
           >
             <div class="flex items-center mb-6">
               <div class="relative">
@@ -834,7 +834,7 @@
 
           <!-- Testimonial 2 -->
           <div
-            class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-neutral-200 group"
+            class="bg-[#0a0a0a] p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-neutral-200 group"
           >
             <div class="flex items-center mb-6">
               <div class="relative">
@@ -886,7 +886,7 @@
 
           <!-- Testimonial 3 -->
           <div
-            class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-neutral-200 group"
+            class="bg-[#0a0a0a] p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-neutral-200 group"
           >
             <div class="flex items-center mb-6">
               <div class="relative">
@@ -973,21 +973,21 @@
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
             Simple, Transparent Pricing
           </h2>
-          <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p class="text-lg text-[#525252] max-w-2xl mx-auto">
             Choose the perfect plan for your business needs
           </p>
         </div>
 
         <!-- Pricing Toggle -->
         <div class="flex justify-center items-center mb-12">
-          <span class="text-gray-400">Monthly</span>
+          <span class="text-[#525252]">Monthly</span>
           <label class="mx-4 relative inline-flex items-center cursor-pointer">
             <input type="checkbox" class="sr-only peer" v-model="isAnnual" />
             <div
-              class="w-14 h-7 bg-[#5B53FD] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all"
+              class="w-14 h-7 bg-[#5B53FD] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-[#0a0a0a] after:border-white/[0.08] after:border after:rounded-full after:h-6 after:w-6 after:transition-all"
             ></div>
           </label>
-          <span class="text-gray-400"
+          <span class="text-[#525252]"
             >Annual <span class="text-[#5B53FD]">(Save 20%)</span></span
           >
         </div>
@@ -1009,9 +1009,9 @@
               <h3 class="text-xl font-bold mb-4">Starter</h3>
               <div class="mb-4">
                 <span class="text-4xl font-bold">$29.99</span>
-                <span class="text-gray-400">/month</span>
+                <span class="text-[#525252]">/month</span>
               </div>
-              <p class="text-gray-400">
+              <p class="text-[#525252]">
                 Perfect for small businesses just getting started
               </p>
             </div>
@@ -1110,7 +1110,7 @@
           >
             <div class="absolute -top-3 right-4">
               <span
-                class="bg-white text-[#5B53FD] text-xs font-semibold px-3 py-1 rounded-full"
+                class="bg-[#0a0a0a] text-[#5B53FD] text-xs font-semibold px-3 py-1 rounded-full"
                 >Popular</span
               >
             </div>
@@ -1118,9 +1118,9 @@
               <h3 class="text-xl font-bold mb-4">Basic</h3>
               <div class="mb-4">
                 <span class="text-4xl font-bold">$59.99</span>
-                <span class="text-gray-200">/month</span>
+                <span class="text-[#d4d4d8]">/month</span>
               </div>
-              <p class="text-gray-200">
+              <p class="text-[#d4d4d8]">
                 Ideal for growing businesses with moderate needs
               </p>
             </div>
@@ -1207,7 +1207,7 @@
               </li>
             </ul>
             <button
-              class="w-full py-3 px-6 rounded-lg bg-white text-[#5B53FD] hover:bg-neutral-100 transition-all duration-300"
+              class="w-full py-3 px-6 rounded-lg bg-[#0a0a0a] text-[#5B53FD] hover:bg-neutral-100 transition-all duration-300"
             >
               Start Free Trial
             </button>
@@ -1221,9 +1221,9 @@
               <h3 class="text-xl font-bold mb-4">Pro</h3>
               <div class="mb-4">
                 <span class="text-4xl font-bold">$99.99</span>
-                <span class="text-gray-400">/month</span>
+                <span class="text-[#525252]">/month</span>
               </div>
-              <p class="text-gray-400">
+              <p class="text-[#525252]">
                 For established businesses requiring advanced features
               </p>
             </div>
@@ -1320,7 +1320,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="py-20 bg-white relative overflow-hidden">
+    <section id="cta" class="py-20 bg-[#0a0a0a] relative overflow-hidden">
       <!-- Enhanced background effect -->
       <div class="absolute inset-0">
         <div
@@ -1444,7 +1444,7 @@
               />
               <!-- Enhanced info card -->
               <div
-                class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-xl border border-white/20"
+                class="absolute bottom-4 left-4 right-4 bg-[#0a0a0a]/95 backdrop-blur-sm p-6 rounded-lg shadow-xl border border-white/20"
               >
                 <div class="flex items-center gap-6">
                   <img
@@ -1483,7 +1483,7 @@
               alt="Akounto Logo"
               class="h-8"
             />
-            <p class="text-gray-400 leading-relaxed">
+            <p class="text-[#525252] leading-relaxed">
               Streamline your financial operations with our comprehensive
               management platform. Automate processes, gain insights, and grow
               your business.
@@ -1552,7 +1552,7 @@
               <li>
                 <a
                   href="#"
-                  class="text-gray-400 hover:text-[#5B53FD] transition-colors inline-flex items-center group"
+                  class="text-[#525252] hover:text-[#5B53FD] transition-colors inline-flex items-center group"
                 >
                   <span>Features</span>
                   <svg
@@ -1573,7 +1573,7 @@
               <li>
                 <a
                   href="#"
-                  class="text-gray-400 hover:text-[#5B53FD] transition-colors inline-flex items-center group"
+                  class="text-[#525252] hover:text-[#5B53FD] transition-colors inline-flex items-center group"
                 >
                   <span>Pricing</span>
                   <svg
@@ -1602,7 +1602,7 @@
               <li>
                 <a
                   href="#"
-                  class="text-gray-400 hover:text-[#5B53FD] transition-colors inline-flex items-center group"
+                  class="text-[#525252] hover:text-[#5B53FD] transition-colors inline-flex items-center group"
                 >
                   <span>Documentation</span>
                   <svg
@@ -1631,7 +1631,7 @@
               <li>
                 <a
                   href="#"
-                  class="text-gray-400 hover:text-[#5B53FD] transition-colors inline-flex items-center group"
+                  class="text-[#525252] hover:text-[#5B53FD] transition-colors inline-flex items-center group"
                 >
                   <span>About</span>
                   <svg
@@ -1663,17 +1663,17 @@
           >
             <a
               href="#"
-              class="text-sm text-gray-400 hover:text-[#5B53FD] transition-colors"
+              class="text-sm text-[#525252] hover:text-[#5B53FD] transition-colors"
               >Terms of Service</a
             >
             <a
               href="#"
-              class="text-sm text-gray-400 hover:text-[#5B53FD] transition-colors"
+              class="text-sm text-[#525252] hover:text-[#5B53FD] transition-colors"
               >Privacy Policy</a
             >
             <a
               href="#"
-              class="text-sm text-gray-400 hover:text-[#5B53FD] transition-colors"
+              class="text-sm text-[#525252] hover:text-[#5B53FD] transition-colors"
               >Cookie Policy</a
             >
           </div>
@@ -1681,7 +1681,7 @@
             <span
               class="w-2 h-2 bg-green-500 rounded-full animate-pulse"
             ></span>
-            <p class="text-sm text-gray-400">
+            <p class="text-sm text-[#525252]">
               © 2024 Akounto. All rights reserved.
             </p>
           </div>

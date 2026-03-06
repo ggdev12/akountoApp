@@ -4,11 +4,11 @@
       <div
         v-for="plan in plans"
         :key="plan.id"
-        class="border rounded-lg bg-white p-6 flex flex-col"
-        :class="{ 'border-blue-500 shadow-blue-200': plan.isUserCurrentPlan }"
+        class="border rounded-lg bg-[#0a0a0a] p-6 flex flex-col"
+        :class="{ 'border-emerald-500 shadow-emerald-500/20': plan.isUserCurrentPlan }"
       >
         <h2 class="text-2xl font-semibold mb-2">{{ plan.name }}</h2>
-        <p class="text-gray-600 mb-4">{{ plan.description }}</p>
+        <p class="text-[#a1a1a1] mb-4">{{ plan.description }}</p>
         <div class="text-3xl font-bold mb-4">
           ${{ plan.price
           }}<span class="text-lg font-normal">/{{ plan.billing_cycle }}</span>
@@ -38,7 +38,7 @@
           :class="
             plan.isUserCurrentPlan
               ? 'bg-green-500 text-white'
-              : 'bg-blue-500 text-white hover:bg-blue-600'
+              : 'bg-emerald-500 text-white hover:bg-emerald-500'
           "
           @click="changePlan(plan.stripe_price_id)"
           :disabled="isChangingPlan"
@@ -73,11 +73,11 @@
       </div>
     </div>
 
-    <div class="mt-10 bg-white rounded-lg p-6">
+    <div class="mt-10 bg-[#0a0a0a] rounded-lg p-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="flex flex-col items-center">
           <svg
-            class="w-12 h-12 text-blue-500 mb-4"
+            class="w-12 h-12 text-emerald-400 mb-4"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -91,13 +91,13 @@
             ></path>
           </svg>
           <h3 class="text-xl font-semibold mb-2">Secure & Reliable</h3>
-          <p class="text-center text-gray-600">
+          <p class="text-center text-[#a1a1a1]">
             Your data is always protected with industry-standard encryption.
           </p>
         </div>
         <div class="flex flex-col items-center">
           <svg
-            class="w-12 h-12 text-blue-500 mb-4"
+            class="w-12 h-12 text-emerald-400 mb-4"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -111,13 +111,13 @@
             ></path>
           </svg>
           <h3 class="text-xl font-semibold mb-2">Lightning Fast</h3>
-          <p class="text-center text-gray-600">
+          <p class="text-center text-[#a1a1a1]">
             Our optimized systems ensure quick processing and syncing.
           </p>
         </div>
         <div class="flex flex-col items-center">
           <svg
-            class="w-12 h-12 text-blue-500 mb-4"
+            class="w-12 h-12 text-emerald-400 mb-4"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -131,7 +131,7 @@
             ></path>
           </svg>
           <h3 class="text-xl font-semibold mb-2">24/7 Support</h3>
-          <p class="text-center text-gray-600">
+          <p class="text-center text-[#a1a1a1]">
             Our dedicated team is always ready to assist you.
           </p>
         </div>

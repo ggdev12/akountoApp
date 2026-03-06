@@ -3,7 +3,7 @@
     <div class="container px-4 mx-auto">
       <div class="flex flex-wrap -m-2">
         <div class="w-full sm:w-1/2 lg:w-1/5 p-2">
-          <div class="px-5 py-3 h-full bg-white rounded-lg">
+          <div class="px-5 py-3 h-full bg-[#0a0a0a] rounded-lg">
             <div class="flex flex-wrap justify-between -m-2">
               <div class="w-auto p-2">
                 <p class="mb-4 text-sm text-neutral-500 font-medium">
@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="w-full sm:w-1/2 lg:w-1/5 p-2">
-          <div class="px-5 py-3 h-full bg-white rounded-lg">
+          <div class="px-5 py-3 h-full bg-[#0a0a0a] rounded-lg">
             <div class="flex flex-wrap justify-between -m-2">
               <div class="w-auto p-2">
                 <p class="mb-4 text-sm text-neutral-500 font-medium">
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="w-full sm:w-1/2 lg:w-1/5 p-2">
-          <div class="px-5 py-3 h-full bg-white rounded-lg">
+          <div class="px-5 py-3 h-full bg-[#0a0a0a] rounded-lg">
             <div class="flex flex-wrap justify-between -m-2">
               <div class="w-auto p-2">
                 <p class="mb-4 text-sm text-neutral-500 font-medium">
@@ -81,7 +81,7 @@
           </div>
         </div>
         <div class="w-full sm:w-1/2 lg:w-1/5 p-2">
-          <div class="px-5 py-3 h-full bg-white rounded-lg">
+          <div class="px-5 py-3 h-full bg-[#0a0a0a] rounded-lg">
             <div class="flex flex-wrap justify-between -m-2">
               <div class="w-auto p-2">
                 <p class="mb-4 text-sm text-neutral-500 font-medium">
@@ -107,7 +107,7 @@
           </div>
         </div>
         <div class="w-full sm:w-1/2 lg:w-1/5 p-2">
-          <div class="px-5 py-3 h-full bg-white rounded-lg">
+          <div class="px-5 py-3 h-full bg-[#0a0a0a] rounded-lg">
             <div class="flex flex-wrap justify-between -m-2">
               <div class="w-auto p-2">
                 <p class="mb-4 text-sm text-neutral-500 font-medium">

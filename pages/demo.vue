@@ -1,16 +1,16 @@
 <template>
-    <div class="bg-white p-6 rounded-lg shadow-sm">
+    <div class="bg-[#0a0a0a] p-6 rounded-lg shadow-sm">
       <h3 class="text-lg font-semibold mb-4">Breakdown by Visitor interaction</h3>
       <div ref="chartRef" class="h-64"></div>
       <div class="mt-4 space-y-2">
         <div v-for="(item, index) in interactionData" :key="index" class="flex items-center justify-between">
           <div class="flex items-center">
             <div :style="{ backgroundColor: item.color }" class="w-3 h-3 rounded-full mr-2"></div>
-            <span class="text-sm text-gray-600">{{ item.label }}</span>
+            <span class="text-sm text-[#a1a1a1]">{{ item.label }}</span>
           </div>
           <div class="flex items-center">
             <span class="text-sm font-medium mr-2">{{ item.percentage }}%</span>
-            <span class="text-sm text-gray-500">{{ item.count }}</span>
+            <span class="text-sm text-[#71717a]">{{ item.count }}</span>
           </div>
         </div>
       </div>

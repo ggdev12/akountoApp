@@ -1,116 +1,49 @@
 <template>
-  <ul
-    class="flex-column space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0 w-64"
-  >
-    <li v-for="item in navItems" :key="item.name">
+  <div class="mb-6 border-b border-white/[0.06]">
+    <div class="-mb-px flex gap-1 overflow-x-auto scrollbar-hide">
       <NuxtLink
+        v-for="item in navItems"
+        :key="item.name"
         :href="item.href"
         :class="[
-          'inline-flex items-center px-4 py-3 rounded-lg w-full',
+          'inline-flex items-center gap-2 px-4 py-2.5 text-[13px] font-medium whitespace-nowrap border-b-2 transition-all duration-150',
           item.current
-            ? 'text-white bg-blue-700 active dark:bg-blue-600'
-            : 'hover:text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white',
+            ? 'border-emerald-400 text-emerald-400'
+            : 'border-transparent text-[#71717a] hover:text-[#a1a1a1] hover:border-white/[0.1]',
         ]"
-        :aria-current="item.current ? 'page' : null"
       >
-        <component
-          :is="item.icon"
-          class="w-4 h-4 me-2"
-          :class="
-            item.current ? 'text-white' : 'text-gray-500 dark:text-gray-400'
-          "
-          aria-hidden="true"
-        />
+        <component :is="item.icon" class="w-4 h-4 shrink-0" :class="item.current ? 'text-emerald-400' : 'text-[#525252]'" aria-hidden="true" />
         {{ item.name }}
         <span
           v-if="item.count"
-          class="ml-auto text-white px-2 py-1 rounded-full text-xs"
-          :class="item.color"
-          >{{ item.count }}</span
-        >
+          class="text-[11px] font-mono px-1.5 py-0.5 rounded-md"
+          :class="item.current ? 'bg-emerald-500/20 text-emerald-400' : 'bg-white/[0.04] text-[#71717a]'"
+        >{{ item.count }}</span>
       </NuxtLink>
-    </li>
-  </ul>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import {
-  Bars3Icon,
-  BellIcon,
-  CalendarIcon,
-  ChartPieIcon,
-  Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
-  XMarkIcon,
-  DocumentTextIcon,
-} from "@heroicons/vue/24/outline";
+import { DocumentDuplicateIcon, FolderIcon, UsersIcon, XMarkIcon, DocumentTextIcon } from "@heroicons/vue/24/outline";
 
 const route = useRoute();
-const companyId = process.client ? localStorage.getItem("companyID") || "" : "";
 const status = computed(() => route.query.status || "All");
 
-const props = defineProps({
-  documentCounts: {
-    type: Object,
-    required: true,
-  },
-});
-
-const getCount = (status) => {
-  return props.documentCounts[status] || 0;
-};
+const props = defineProps({ documentCounts: { type: Object, required: true } });
+const getCount = (s) => props.documentCounts[s] || 0;
 
 const navItems = computed(() => [
-  {
-    name: "All",
-    href: `/costs`,
-    icon: DocumentDuplicateIcon,
-    current: status.value === "All",
-    count: getCount("Ready") + getCount("Extraction"),
-    color: "bg-gray-500",
-  },
-  {
-    name: "Extracting",
-    href: `/costs?status=Extraction`,
-    icon: DocumentDuplicateIcon,
-    current: ["Inbox", "Extraction"].includes(status.value),
-    count: getCount("Inbox") + getCount("Extraction"),
-    color: "bg-gray-500",
-  },
-  {
-    name: "Missing Data",
-    href: `/costs?status=MissingData`,
-    icon: XMarkIcon,
-    current: status.value === "MissingData",
-    count: getCount("MissingData"),
-    color: "bg-red-500",
-  },
-  {
-    name: "Ready",
-    href: `/costs?status=Ready`,
-    icon: DocumentTextIcon,
-    current: status.value === "Ready",
-    count: getCount("Ready"),
-    color: "bg-green-500",
-  },
-  {
-    name: "Processed",
-    href: `/costs?status=Processed`,
-    icon: FolderIcon,
-    current: status.value === "Processed",
-    count: getCount("Processed"),
-    color: "bg-blue-500",
-  },
-  {
-    name: "Archived",
-    href: `/costs?status=archived`,
-    icon: UsersIcon,
-    current: status.value === "archived",
-    count: getCount("archived"),
-    color: "bg-green-500",
-  },
+  { name: "All", href: "/costs", icon: DocumentDuplicateIcon, current: status.value === "All", count: getCount("Ready") + getCount("Extraction") },
+  { name: "Extracting", href: "/costs?status=Extraction", icon: DocumentDuplicateIcon, current: ["Inbox", "Extraction"].includes(status.value), count: getCount("Inbox") + getCount("Extraction") },
+  { name: "Missing Data", href: "/costs?status=MissingData", icon: XMarkIcon, current: status.value === "MissingData", count: getCount("MissingData") },
+  { name: "Ready", href: "/costs?status=Ready", icon: DocumentTextIcon, current: status.value === "Ready", count: getCount("Ready") },
+  { name: "Processed", href: "/costs?status=Processed", icon: FolderIcon, current: status.value === "Processed", count: getCount("Processed") },
+  { name: "Archived", href: "/costs?status=archived", icon: UsersIcon, current: status.value === "archived", count: getCount("archived") },
 ]);
 </script>
+
+<style scoped>
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>

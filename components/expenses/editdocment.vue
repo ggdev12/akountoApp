@@ -20,18 +20,18 @@
               <DialogPanel class="pointer-events-auto w-screen w-full">
                 <form
                   @submit.prevent="updateReceipt"
-                  class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl"
+                  class="flex h-full flex-col overflow-y-scroll bg-[#0a0a0a] shadow-xl border-l border-white/[0.06]"
                 >
                   <div class="flex-1">
                     <!-- Header -->
-                    <div class="bg-gray-50 px-4 py-6 sm:px-6">
+                    <div class="bg-[#111111] border-b border-white/[0.06] px-4 py-6 sm:px-6">
                       <div class="flex items-start justify-between space-x-3">
                         <div class="space-y-1">
                           <DialogTitle
-                            class="text-base font-semibold leading-6 text-gray-900"
+                            class="text-base font-semibold leading-6 text-white"
                             >Edit Document
                           </DialogTitle>
-                          <p class="text-sm text-gray-500">
+                          <p class="text-sm text-[#71717a]">
                             Edit the document below to update the existing
                             document.
                           </p>
@@ -39,7 +39,7 @@
                         <div class="flex h-7 items-center">
                           <button
                             type="button"
-                            class="relative text-gray-400 hover:text-gray-500"
+                            class="relative text-[#525252] hover:text-[#71717a]"
                             @click="open = false"
                           >
                             <span class="absolute -inset-2.5" />
@@ -60,7 +60,7 @@
                             "
                           >
                             <div
-                              class="bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3 rounded relative"
+                              class="bg-emerald-500/10 border border-emerald-500 text-emerald-400 px-4 py-3 rounded relative"
                               role="alert"
                             >
                               <span class="block sm:inline mx-auto my-auto"
@@ -78,16 +78,16 @@
                             <img
                               :src="imagePath"
                               :alt="'Processed Document Image ' + (index + 1)"
-                              class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm"
+                              class="mt-1 block w-full rounded-lg border-white/[0.08] shadow-sm"
                             />
                             <hr
-                              class="my-4 border-t border-dashed border-gray-300"
+                              class="my-4 border-t border-dashed border-white/[0.08]"
                             />
                           </div>
                         </div>
                       </div>
                       <div class="w-1/2 px-3 mb-6">
-                        <div class="container mx-auto p-4 bg-gray-50">
+                        <div class="container mx-auto p-4 bg-[#111111]">
                           <form
                             v-if="receipt.id"
                             @submit.prevent="updateInvoice"
@@ -102,7 +102,7 @@
                                 <div class="mb-3">
                                   <label
                                     for="account_ref"
-                                    class="block text-sm font-medium text-gray-700"
+                                    class="block text-sm font-medium text-[#a1a1a1]"
                                     >Account</label
                                   >
                                   <input
@@ -110,60 +110,60 @@
                                     id="account_ref"
                                     disabled
                                     v-model="receipt.account_ref"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                                   />
                                 </div>
                                 <div class="mb-3">
                                   <label
                                     for="date"
-                                    class="block text-sm font-medium text-gray-700"
+                                    class="block text-sm font-medium text-[#a1a1a1]"
                                     >Date</label
                                   >
                                   <input
                                     type="date"
                                     id="date"
                                     v-model="receipt.txn_date"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                                   />
                                 </div>
                                 <div class="mb-3">
                                   <label
                                     for="amount"
-                                    class="block text-sm font-medium text-gray-700"
+                                    class="block text-sm font-medium text-[#a1a1a1]"
                                     >Amount</label
                                   >
                                   <input
                                     id="amount"
                                     disabled
                                     v-model="receipt.total_amount"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                    class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                                   />
                                 </div>
                                 <!-- <div class="mb-3">
                                 <label
                                   for="totalAmount"
-                                  class="block text-sm font-medium text-gray-700"
+                                  class="block text-sm font-medium text-[#a1a1a1]"
                                   >Total Amount</label
                                 >
                                 <input
                                   type="number"
                                   id="totalAmount"
                                   v-model="invoice.total_amount"
-                                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                  class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
                                   readonly
                                 />
                               </div> -->
                                 <div class="mb-3">
                                   <label
                                     for="customerName"
-                                    class="block text-sm font-medium text-gray-700"
+                                    class="block text-sm font-medium text-[#a1a1a1]"
                                     >Payee</label
                                   >
 
                                   <Listbox v-model="selectedPerson">
                                     <div class="relative mt-1">
                                       <ListboxButton
-                                        class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
+                                        class="relative w-full cursor-default rounded-lg bg-[#0a0a0a] py-2 pl-3 pr-10 text-left shadow-lg focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
                                       >
                                         <span class="block truncate">{{
                                           selectedPerson.name
@@ -172,7 +172,7 @@
                                           class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
                                         >
                                           <ChevronUpDownIcon
-                                            class="h-5 w-5 text-gray-400"
+                                            class="h-5 w-5 text-[#525252]"
                                             aria-hidden="true"
                                           />
                                         </span>
@@ -184,7 +184,7 @@
                                         leave-to-class="opacity-0"
                                       >
                                         <ListboxOptions
-                                          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm"
+                                          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-lg bg-[#18181b] border border-white/[0.08] py-1 text-base shadow-lg ring-1 ring-white/[0.08] focus:outline-none sm:text-sm"
                                         >
                                           <ListboxOption
                                             v-slot="{ active, selected }"
@@ -196,8 +196,8 @@
                                             <li
                                               :class="[
                                                 active
-                                                  ? 'bg-amber-100 text-amber-900'
-                                                  : 'text-gray-900',
+                                                  ? 'bg-emerald-500/10 text-emerald-400'
+                                                  : 'text-white',
                                                 'relative cursor-default select-none py-2 pl-10 pr-4',
                                               ]"
                                             >
@@ -212,7 +212,7 @@
                                               >
                                               <span
                                                 v-if="selected"
-                                                class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                                                class="absolute inset-y-0 left-0 flex items-center pl-3 text-emerald-400"
                                               >
                                                 <CheckIcon
                                                   class="h-5 w-5"
@@ -232,64 +232,64 @@
                                   style="height: 200px"
                                 >
                                   <label
-                                    class="block text-sm font-medium text-gray-700"
+                                    class="block text-sm font-medium text-[#a1a1a1]"
                                     >Line Items *</label
                                   >
                                   <table
-                                    class="min-w-full divide-y divide-gray-200 mt-2"
+                                    class="min-w-full divide-y divide-white/[0.06] mt-2"
                                   >
-                                    <thead class="bg-gray-50">
+                                    <thead class="bg-[#111111]">
                                       <tr>
                                         <th
                                           scope="col"
-                                          class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                          class="px-4 py-2 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                                         >
                                           Account
                                         </th>
                                         <th
                                           scope="col"
-                                          class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                          class="px-4 py-2 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                                         >
                                           Amount
                                         </th>
                                         <th
                                           scope="col"
-                                          class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                          class="px-4 py-2 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                                         >
                                           Status
                                         </th>
                                         <th
                                           scope="col"
-                                          class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                          class="px-4 py-2 text-left text-xs font-medium text-[#71717a] uppercase tracking-wider"
                                         >
                                           Tax Code
                                         </th>
                                       </tr>
                                     </thead>
                                     <tbody
-                                      class="bg-white divide-y divide-gray-200"
+                                      class="bg-[#0a0a0a] divide-y divide-white/[0.06]"
                                     >
                                       <tr
                                         v-for="item in receipt.PurchaseLineItems"
                                         :key="item.id"
                                       >
                                         <td
-                                          class="px-4 py-2 whitespace-nowrap text-sm text-gray-500"
+                                          class="px-4 py-2 whitespace-nowrap text-sm text-[#71717a]"
                                         >
                                           {{ item.account_ref }}
                                         </td>
                                         <td
-                                          class="px-4 py-2 whitespace-nowrap text-sm text-gray-500"
+                                          class="px-4 py-2 whitespace-nowrap text-sm text-[#71717a]"
                                         >
                                           {{ item.amount }}
                                         </td>
                                         <td
-                                          class="px-4 py-2 whitespace-nowrap text-sm text-gray-500"
+                                          class="px-4 py-2 whitespace-nowrap text-sm text-[#71717a]"
                                         >
                                           {{ item.billable_status }}
                                         </td>
                                         <td
-                                          class="px-4 py-2 whitespace-nowrap text-sm text-gray-500"
+                                          class="px-4 py-2 whitespace-nowrap text-sm text-[#71717a]"
                                         >
                                           {{ item.tax_code_ref }}
                                         </td>
@@ -309,13 +309,13 @@
 
                   <!-- Action buttons -->
                   <div
-                    class="flex-shrink-0 border-t border-gray-200 px-4 py-5 sm:px-6"
+                    class="flex-shrink-0 border-t border-white/[0.06] px-4 py-5 sm:px-6"
                   >
                     <div class="flex justify-end space-x-3">
                       <button
                         type="button"
                         :disabled="loading"
-                        class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="rounded-lg bg-[#0a0a0a]/[0.04] px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/[0.08] hover:bg-[#111111] disabled:opacity-50 disabled:cursor-not-allowed"
                         @click="open = false"
                       >
                         Cancel
@@ -323,7 +323,7 @@
                       <button
                         type="submit"
                         :disabled="loading"
-                        class="inline-flex justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                        class="inline-flex justify-center rounded-md bg-emerald-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {{ loading ? "Updating..." : "Update" }}
                       </button>

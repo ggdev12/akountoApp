@@ -1,19 +1,19 @@
 <template>
-  <div class="mx-auto p-6 bg-white rounded-lg shadow-sm">
+  <div class="mx-auto p-6 bg-[#0a0a0a] rounded-lg shadow-sm">
     <!-- Header -->
     <div class="mb-8">
       <h2
-        class="text-2xl font-semibold text-gray-800 pb-4 border-b border-gray-200"
+        class="text-2xl font-semibold text-white pb-4 border-b border-white/[0.06]"
       >
         QuickBooks Integration
       </h2>
-      <p class="mt-2 text-sm text-gray-600">
+      <p class="mt-2 text-sm text-[#a1a1a1]">
         Connect your account with QuickBooks to sync your financial data.
       </p>
     </div>
 
     <!-- Integration Status Card -->
-    <div class="bg-gray-50 rounded-lg p-6 mb-6">
+    <div class="bg-[#111111] rounded-lg p-6 mb-6">
       <!-- QuickBooks Info -->
       <div class="flex items-center justify-between mb-6">
         <div class="flex items-center flex-col space-x-4">
@@ -45,7 +45,7 @@
             'px-3 py-1 rounded-full text-sm font-medium',
             isConnected
               ? 'bg-green-100 text-green-800'
-              : 'bg-gray-100 text-gray-800',
+              : 'bg-[#09090b] text-white',
           ]"
         >
           {{ isConnected ? "Connected" : "Not Connected" }}
@@ -85,15 +85,15 @@
     </div>
 
     <!-- Connection Details -->
-    <div v-if="isConnected" class="bg-white rounded-lg">
+    <div v-if="isConnected" class="bg-[#0a0a0a] rounded-lg">
       <div class="space-y-4">
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-600">Connection Status</span>
+          <span class="text-sm text-[#a1a1a1]">Connection Status</span>
           <span class="text-sm font-medium text-green-600">Active</span>
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-600">Last Synced</span>
-          <span class="text-sm text-gray-900">
+          <span class="text-sm text-[#a1a1a1]">Last Synced</span>
+          <span class="text-sm text-white">
             {{ formatDate(lastSyncedAt) }}
           </span>
         </div>
@@ -106,10 +106,10 @@
       class="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50"
     >
       <div
-        class="bg-white p-4 rounded-lg shadow-lg flex items-center space-x-2"
+        class="bg-[#0a0a0a] p-4 rounded-lg shadow-lg flex items-center space-x-2"
       >
         <div class="loader"></div>
-        <p class="text-gray-700">{{ loadingMessage }}</p>
+        <p class="text-[#a1a1a1]">{{ loadingMessage }}</p>
       </div>
     </div>
   </div>

@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-white rounded-lg p-6">
-    <h3 class="text-lg font-semibold text-gray-700 mb-4">Quick Stats</h3>
+  <div class="bg-[#0a0a0a] rounded-lg p-6">
+    <h3 class="text-lg font-semibold text-[#a1a1a1] mb-4">Quick Stats</h3>
     <div class="grid grid-cols-2 gap-4">
       <div v-for="stat in stats" :key="stat.label" class="flex flex-col">
-        <p class="text-sm text-gray-500">{{ stat.label }}</p>
+        <p class="text-sm text-[#71717a]">{{ stat.label }}</p>
         <p :class="`text-2xl font-bold ${stat.color}`">{{ stat.value }}</p>
       </div>
     </div>
@@ -26,7 +26,7 @@ onMounted(async () => {
       {
         label: "Documents Scanned",
         value: data.data.companyStats.totalDocuments || 0,
-        color: "text-blue-500",
+        color: "text-emerald-400",
       },
       {
         label: "Processed",
@@ -43,7 +43,7 @@ onMounted(async () => {
         value: isNaN(data.data.companyStats.successRate)
           ? 0
           : data.data.companyStats.successRate,
-        color: "text-blue-500",
+        color: "text-emerald-400",
       },
     ];
   } catch (error) {

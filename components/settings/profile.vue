@@ -1,26 +1,26 @@
 <template>
-    <div class=" mx-auto p-4 bg-white  rounded-lg">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-6 pb-6 border-b border-gray-300">Profile Settings</h2>
+    <div class=" mx-auto p-4 bg-[#0a0a0a]  rounded-lg">
+      <h2 class="text-2xl font-semibold text-white mb-6 pb-6 border-b border-white/[0.08]">Profile Settings</h2>
       
       <form @submit.prevent="saveProfile">
         <div class="mb-4">
-          <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+          <label for="fullName" class="block text-sm font-medium text-[#a1a1a1]">Full Name</label>
           <input 
             type="text" 
             id="fullName" 
             v-model="form.name" 
             :disabled="!isEditing"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           >
         </div>
         <div class="mb-6">
-          <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+          <label for="email" class="block text-sm font-medium text-[#a1a1a1]">Email Address</label>
           <input 
             type="email" 
             id="email" 
             v-model="form.email" 
             :disabled="!isEditing"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            class="mt-1 block w-full rounded-lg bg-[#0a0a0a]/[0.04] border-white/[0.08] text-white placeholder-[#525252] shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           >
         </div>
         <div class="flex justify-end space-x-3">
@@ -28,7 +28,7 @@
             v-if="!isEditing" 
             @click="startEditing" 
             type="button"
-            class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            class="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
           >
             Edit
           </button>
@@ -43,7 +43,7 @@
             v-if="isEditing" 
             @click="cancelEditing" 
             type="button"
-            class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            class="px-4 py-2 bg-white/[0.06] text-white rounded-md hover:bg-white/[0.08] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
           >
             Cancel
           </button>
